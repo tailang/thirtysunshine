@@ -1,4 +1,8 @@
 Thirtysunshine::Application.routes.draw do
+  get "staticpages/index"
+
+  root :to => "staticpages#index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
