@@ -1,0 +1,31 @@
+<div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+  	<div class="container">
+  	  <a id="logo" href="#">30度阳光  </a>
+      <ul class="nav navbar-nav navbar-left">
+        <li><a href="#">社区</a></li>
+        <li><a href="#">成员</a></li>
+        <li><a href="#">关于</a></li>
+        <form class="navbar-form navbar-left" role="search">
+           <div class="form-group" id="search">
+             <input type="text" class="form-control" placeholder="Search">
+           </div>
+         </form>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+      	<% if 1 %>
+      	  <li>
+      	  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tailang <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">我的帐号</a></li>
+            <li><a href="#">帐号设置</a></li>
+            <li><a href="#">退出</a></li>
+          </ul>
+          </li>
+      	<% else %>
+      		<li><a href="#">登录</a></li>
+      		<li><a href="#">注册</a></li>
+      	<% end %>
+      </ul>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+
+/* header */
+#logo {
+	float: left;
+	margin-right: 30px;
+	font-size: 20px;
+	color: #27ae60;
+	letter-spacing: -1px;
+	padding-top: 9px;
+	line-height: 1;
+	&:hover{
+		color: #2ecc71;
+		text-decoration: none;
+	}
+}
+
+#search{
+	padding-top: 17px;
+}
