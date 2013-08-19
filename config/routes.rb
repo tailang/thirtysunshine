@@ -1,4 +1,6 @@
 Thirtysunshine::Application.routes.draw do
+  devise_for :users
+
   get "staticpages/index"
 
   root :to => "staticpages#index"
