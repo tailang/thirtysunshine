@@ -3,7 +3,7 @@
   	  <a id="logo" href="#">30度阳光  </a>
       <ul class="nav navbar-nav navbar-left">
         <li><a href="#">社区</a></li>
-        <li><a href="#">成员</a></li>
+        <li><%= link_to "成员", users_path %></li>
         <li><a href="#">关于</a></li>
         <form class="navbar-form navbar-left" role="search">
            <div class="form-group" id="search">
@@ -15,10 +15,10 @@
       <ul class="nav navbar-nav navbar-right">
       	<% if user_signed_in? %>
       	  <li>
-      	  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tailang <b class="caret"></b></a>
+      	  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.username %> <b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><a href="#">我的帐号</a></li>
-            <li><a href="#">帐号设置</a></li>
+            <li><%= link_to "我的帐号", current_user %></li>
+            <li><%= link_to "帐号设置", edit_user_path(current_user) %></li>
             <li><%= link_to '退出', destroy_user_session_path, :method => :delete %></li>
           </ul>
           </li>

@@ -1,0 +1,51 @@
+<%= form_for(@user) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+  	<%= f.label :username, "用户名" %>
+  	<%= f.text_field :username %>
+  </div>
+
+  <div class="field">
+  	<%= f.label :gender, "男" %>
+  	<%= radio_button_tag 'user[gender]', '1' %>
+  	<%= f.label :gender, "女" %>
+  	<%= radio_button_tag 'user[gender]', '0' %>
+  </div>
+  
+  <div class="field">
+  	<%= f.label :school, "学校" %>
+  	<%= f.text_field :school %>
+  </div>
+
+  <div class="field">
+    <%= f.label :province, "省" %>
+    <%= f.text_field :province %>
+    <%= f.label :city, "市" %>
+    <%= f.text_field :city %>
+  </div>
+
+  <div class="field">
+  	<%= f.label :douban, "豆瓣" %>
+  	<%= f.text_field :douban %>
+  </div>
+
+  <div class=:field>
+  	<%= f.label :sinaweibo, "微博" %>
+  	<%= f.text_field :sinaweibo %>
+  </div>
+
+  <div class="field">
+  	<%= f.label :site, "个人博客" %>
+  	<%= f.text_field :site %>
+  </div>
+  
+  <div class="field">
+  	<%= f.label :description, "个人简介" %>
+  	<%= f.text_area :description %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "发布" %>
+  </div>
+<% end %>
+  

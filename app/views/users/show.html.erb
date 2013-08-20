@@ -1,0 +1,13 @@
+<%= provide(:title, @user.username) %>
+用户名：<%= @user.username %><br>
+性别:
+<% if @user.gender == true %>
+  男
+<% else %>
+  女
+<% end %><br>
+所在地:<%= @user.province %>省.<%= @user.city %>市 <br>
+自我介绍:<p><%= @user.description %></p> <br>
+豆瓣:<%= @user.douban %><br>
+微博:<%= @user.sinaweibo %><br>
+个人博客:<%= @user.site %>
