@@ -1,5 +1,6 @@
 #encoding: utf-8
 class User < ActiveRecord::Base
+  mount_uploader :avatar, AvatarUploader
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -11,6 +12,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :username, :gender, :description, :province, :city,
                   :school, :douban, :sinaweibo, :site
+  attr_accessible :avatar, :avatar_cache
 
   validates :username, :presence => true, :uniqueness => true, :length => {:maximum => 12}
   validate :username_cannot_contain_invalid_characters

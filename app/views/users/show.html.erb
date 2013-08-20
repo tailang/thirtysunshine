@@ -1,4 +1,5 @@
 <%= provide(:title, @user.username) %>
+<%= image_tag(@user.avatar_url(:large)) if @user.avatar %>
 用户名：<%= @user.username %><br>
 性别:
 <% if @user.gender == true %>

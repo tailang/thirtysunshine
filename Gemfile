@@ -42,3 +42,7 @@ gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
                               :branch => '3.0.0'
 
 gem 'devise', '~> 2.2.4'
+
+#uploader
+gem 'carrierwave', '0.6.2'
+gem 'mini_magick'

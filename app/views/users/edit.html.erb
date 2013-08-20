@@ -1,5 +1,12 @@
 <%= form_for(@user) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
+
+  <div class="field">
+    <%= image_tag(@user.avatar_url(:large)) if @user.avatar %>
+    <%= f.file_field :avatar %>
+    <%= f.hidden_field :avatar_cache %>
+  </div>
+  
   <div class="field">
   	<%= f.label :username, "用户名" %>
   	<%= f.text_field :username %>
