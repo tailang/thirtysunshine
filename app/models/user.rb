@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
   attr_accessible :avatar, :avatar_cache
 
   has_many :topics
+  has_many :comments
   
   validates :username, :presence => true, :uniqueness => true, :length => {:maximum => 12}
   validate :username_cannot_contain_invalid_characters

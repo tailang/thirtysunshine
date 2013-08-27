@@ -3,7 +3,11 @@ Thirtysunshine::Application.routes.draw do
   devise_for :users
 
   resources :users
-  resources :topics
+  
+  resources :topics do
+    resources :comments
+  end
+
   resources :nodes
 
 

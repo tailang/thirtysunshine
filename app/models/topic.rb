@@ -1,9 +1,10 @@
 class Topic < ActiveRecord::Base
   attr_accessible :title, :body, :node_id
+  acts_as_commentable
 
   belongs_to :user
   belongs_to :node
-  
+
   default_scope :order => 'id DESC'
   
   validates :title, :presence => true

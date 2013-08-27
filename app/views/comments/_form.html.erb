@@ -1,0 +1,12 @@
+<% @comment ||= @topic.comments.build %>
+<%= form_for([@comment.commentable, @comment]) do |f| %>
+<div class="field">
+  <%= f.label :comment, "添加回应" %>
+  <%= f.text_area :comment %>
+</div>
+
+<div class="action">
+  <%= f.submit "提交" %>
+</div> 
+
+<% end %>
