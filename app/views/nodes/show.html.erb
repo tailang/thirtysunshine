@@ -1,0 +1,8 @@
+<%= provide(:title, @node.name+"节点话题") %>
+该节点共有<%= @topics.count %>个话题 <br>
+<% @topics.each do |topic| %>
+  <%= link_to topic.title, topic_path(topic) %><br>
+  节点：<%= topic.node.name %>
+  作者：<%= topic.user.username %>
+  发布时间:<%= time_ago_in_words(topic.created_at) %><br>
+<% end -%>

@@ -1,0 +1,7 @@
+<%= provide(:title, "社区") %>
+<% @topics.each do |topic| %>
+  <%= link_to topic.title, topic_path(topic) %><br>
+  节点：<%= link_to topic.node.name, node_path(topic.node) %>
+  作者：<%= topic.user.username %>
+  发布时间:<%= time_ago_in_words(topic.created_at) %><br>
+<% end -%>

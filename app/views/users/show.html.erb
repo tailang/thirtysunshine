@@ -1,5 +1,5 @@
 <%= provide(:title, @user.username) %>
-<%= image_tag(@user.avatar_url(:large)) if @user.avatar %>
+<%= image_tag(@user.avatar_url(:large), :class => "img-rounded") if @user.avatar %>
 用户名：<%= @user.username %><br>
 性别:
 <% if @user.gender == true %>
@@ -11,4 +11,9 @@
 自我介绍:<p><%= @user.description %></p> <br>
 豆瓣:<%= @user.douban %><br>
 微博:<%= @user.sinaweibo %><br>
-个人博客:<%= @user.site %>
+个人博客:<%= @user.site %><br><br>
+
+创建的话题:<br>
+<% @user.topics.each do |topic| %>
+  <%= topic.title %><br>
+<% end -%>

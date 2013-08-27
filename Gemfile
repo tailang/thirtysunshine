@@ -37,10 +37,7 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
-gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
-                              :github => 'anjlab/bootstrap-rails',
-                              :branch => '3.0.0'
-
+gem 'anjlab-bootstrap-rails', '3.0.0.0', :require => 'bootstrap-rails'
 gem 'devise', '~> 2.2.4'
 
 #uploader

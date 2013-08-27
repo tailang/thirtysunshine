@@ -3,11 +3,13 @@ Thirtysunshine::Application.routes.draw do
   devise_for :users
 
   resources :users
+  resources :topics
+  resources :nodes
 
 
   get "staticpages/index"
 
-  root :to => "staticpages#index"
+  root :to => "topics#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

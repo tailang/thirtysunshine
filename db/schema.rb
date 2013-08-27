@@ -11,7 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130820081524) do
+ActiveRecord::Schema.define(:version => 20130827072704) do
+
+  create_table "nodes", :force => true do |t|
+    t.string   "name"
+    t.text     "introduction"
+    t.integer  "topics_count"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "topics", :force => true do |t|
+    t.string   "title",      :null => false
+    t.text     "body",       :null => false
+    t.integer  "user_id"
+    t.integer  "node_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "", :null => false

@@ -1,0 +1,17 @@
+<%= form_for(@node) do |f| %>
+  <%= render "shared/error_messages", :object => f.object %>
+  <div class="field">
+  	<%= f.label :name, "节点名" %>
+  	<%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+  	<%= f.label :introduction, "节点介绍" %>
+  	<%= f.text_area :introduction %>
+  </div>
+
+  <div class="action">
+  	<%= f.submit "添加" %>
+  </div>
+<% end %>
+  

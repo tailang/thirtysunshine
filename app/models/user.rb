@@ -14,6 +14,8 @@ class User < ActiveRecord::Base
                   :school, :douban, :sinaweibo, :site
   attr_accessible :avatar, :avatar_cache
 
+  has_many :topics
+  
   validates :username, :presence => true, :uniqueness => true, :length => {:maximum => 12}
   validate :username_cannot_contain_invalid_characters
 
