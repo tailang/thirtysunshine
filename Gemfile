@@ -43,3 +43,5 @@ gem 'devise', '~> 2.2.4'
 #uploader
 gem 'carrierwave', '0.6.2'
 gem 'mini_magick'
+
+gem 'acts_as_commentable', '3.0.1'
