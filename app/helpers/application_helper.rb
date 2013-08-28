@@ -7,5 +7,28 @@ module ApplicationHelper
 	else
 	  "#{base_title} | #{page_title}"
 	end
-	end
+  end
+  
+#markdown支持  
+   def markdown(text)
+    options = {   
+      :autolink => true, 
+      :fenced_code_blocks => true,
+      :no_intra_emphasis => true,
+      :hard_wrap => true,
+      :strikethrough =>true
+    }
+    markdown = Redcarpet::Markdown.new(HTMLwithCodeRay,options)
+    nl_to_br(markdown.render(text)).html_safe
+  end
+
+  class HTMLwithCodeRay < Redcarpet::Render::HTML
+    def block_code(code, language)
+      CodeRay.scan(code, language).div(:tab_width=>2)
+    end
+  end
+
+  def nl_to_br(text)
+    text.gsub("\r\n", "<br/>").gsub("\r", "<br/>").gsub("\n", "<br/>")
+  end
 end

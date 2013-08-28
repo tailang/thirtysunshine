@@ -44,4 +44,9 @@ gem 'devise', '~> 2.2.4'
 gem 'carrierwave', '0.6.2'
 gem 'mini_magick'
 
+#comment
 gem 'acts_as_commentable', '3.0.1'
+
+#markdown
+gem 'redcarpet'
+gem 'coderay'

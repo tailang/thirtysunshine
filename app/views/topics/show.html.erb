@@ -2,7 +2,7 @@
 <h2><%= @topic.title %></h2>
 作者：<%= @topic.user.username %>
 节点:<%= @topic.node.name %>
-<p><%= @topic.body %></p>
+<p><%= markdown @topic.body %></p>
 
 <%= render @topic.comments %><br>
 <%= render "comments/form" %>
