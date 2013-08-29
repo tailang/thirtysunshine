@@ -1,3 +1,4 @@
+@import "globals/variables.css.scss";
 
 /* header */
 #logo {
@@ -13,7 +14,22 @@
 	}
 }
 
-#search{
-	padding-top: 15px;
+/*footre*/
+.footer {
+  border-top: 1px;
+  margin-top: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid $grayMediumLight;
+  color: $grayLight;
+  p {
+  	font-size: 12px;
+  }
+  a{
+  	color: $grayLight;
+  	&:hover{
+  		text-decoration: none;
+  		color: #389abd;
+  	}
+  }
 }
-

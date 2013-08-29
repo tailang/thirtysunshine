@@ -3,6 +3,7 @@ class TopicsController < ApplicationController
 
   def index
   	@topics = Topic.all
+    @nodes = Node.all
   end
 
   def show

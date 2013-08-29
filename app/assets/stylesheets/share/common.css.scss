@@ -6,7 +6,18 @@ html{
 
 body{
 	padding: 70px;
-  background-color: #eee;	
+  background-color: #eeeeee;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  color: #333333;	
+}
+
+a{
+  color: #3498db;
+  &:hover{
+    color: #2980b9;
+  }
 }
 
 .box {
@@ -21,22 +32,5 @@ body{
   box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
 }
 
-.footer {
-  border-top: 1px;
-  margin-top: 10px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  border-top: 1px solid $grayMediumLight;
-  color: $grayLight;
-  p {
-  	font-size: 12px;
-  }
-  a{
-  	color: $grayLight;
-  	&:hover{
-  		text-decoration: none;
-  		color: #389abd;
-  	}
-  }
-}
+
 

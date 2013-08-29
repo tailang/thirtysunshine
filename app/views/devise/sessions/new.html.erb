@@ -1,17 +1,55 @@
-<h2>Sign in</h2>
+<%= provide(:title, "登录") %>
+<div class="row">
+  <div class="span9">
+  	<div class="box">
+  		<span id="existing-account">登录</span>
+       <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => "form-horizontal"}) do |f| %>
+       <%= render 'shared/error_messages', object: f.object %>
+       <div class="control-group">
+       	 <div class="control-label">
+          <%= f.label :email, "邮箱" %>
+       	 </div>
+       	 <div class="controls">
+       	   <%= f.email_field :email, :autofocus => true %>
+       	 </div>
+       </div>
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+       <div class="control-group">
+       	 <div class="control-label">
+          <%= f.label :password, "密码" %>
+       	 </div>
+       	 <div class="controls">
+       	   <%= f.password_field :password %>
+       	 </div>
+       </div>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+       
+       <% if devise_mapping.rememberable? -%>
+          <div class="control-group checkbox optional">
+            <label class="checkbox optional control-label"></label>
+            <div class="controls">
+              <div class="inputs-list">
+              <label for="user_remember_me">
+                <%= f.check_box :remember_me, :style => "width:auto;" %>记住我?
+              </label>
+              </div>
+            </div>
+          </div>
+       <% end -%>
 
-  <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-  <% end -%>
+       <div class="control-group">
+         <div class="controls">
+       	  <%= f.submit "登录", :class => "btn btn-primary    " %>
+         </div>
+       </div>
+      <% end %>
+    </div>
+  </div>
 
-  <div><%= f.submit "Sign in" %></div>
-<% end %>
+  <div class="span3">
+  	<div class="box">
+      <%= render "devise/shared/links" %>
+  	</div>
+  </div>
+</div>
 
-<%= render "devise/shared/links" %>

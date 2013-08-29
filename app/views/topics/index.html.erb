@@ -1,7 +1,29 @@
 <%= provide(:title, "社区") %>
-<% @topics.each do |topic| %>
-  <%= link_to topic.title, topic_path(topic) %><br>
-  节点：<%= link_to topic.node.name, node_path(topic.node) %>
-  作者：<%= topic.user.username %>
-  发布时间:<%= time_ago_in_words(topic.created_at) %><br>
-<% end -%>
+<div class="row">
+  <div class="span9">
+    <div class="box">
+        <div id="node_info">
+          <% @nodes.each do |node| %>
+          <%= link_to node.name, node %>
+          <% end -%>
+        </div>
+        
+        <div class="topics">
+        <% @topics.each do |topic| %>
+        <div class="topic_line">
+          <div class="avatar">
+           <%= link_to image_tag(topic.user.avatar_url(:normal), :class => "img-rounded"), user_path(topic.user) %>
+          </div>
+        <%= link_to topic.title, topic_path(topic) %><br>
+        节点：<%= link_to topic.node.name, node_path(topic.node) %>
+        作者：<%= link_to topic.user.username, user_path(topic.user) %>
+        发布时间:<%= time_ago_in_words(topic.created_at) %><br>
+        </div>
+        <% end -%>
+        
+      </div>
+      </div>
+  </div>
+</div>
+
+

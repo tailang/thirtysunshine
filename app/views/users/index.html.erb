@@ -1,7 +1,9 @@
 <%= provide(:title, "成员") %>
-<ul>
-  <% @users.each do |user| %>
-    <%= image_tag(user.avatar_url(:normal)) %>
-	<li><%= user.username %></li>
+<div class="box">
+   <% @users.each do |user| %>
+    <%= link_to image_tag(user.avatar_url(:normal)), user, :data => {:toggle => "tooltip"}, :title => user.username %>
   <% end %>
-</ul>
+</div>
+ 
+
+

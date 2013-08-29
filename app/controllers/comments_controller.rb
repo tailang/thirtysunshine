@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
   	  flash[:success] = "成功创建评论"
   	else
   	  redirect_to commentable_record
-  	  flash[:danger] = "创建评论失败"
+  	  flash[:error] = "创建评论失败"
   	end
   end
 

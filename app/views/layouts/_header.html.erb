@@ -1,34 +1,37 @@
-<div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+<div class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
   	<div class="container">
   	  <%= link_to image_tag("5.png", :id => "logo"), root_path %>
-      <ul class="nav navbar-nav navbar-left">
+      <ul class="nav navbar-nav pull-left">
         <li><%= link_to "社区", topics_path %></li>
         <li><%= link_to "成员", users_path %></li>
         <li><a href="#">关于</a></li>
-        <form class="navbar-form navbar-left" role="search">
+        <form class="navbar-form pull-left">
            <div class="form-group" id="search">
              <input type="text" class="form-control" placeholder="Search">
            </div>
          </form>
       </ul>
 
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav pull-right">
         <li><%= link_to "创建节点", new_node_path %></li>
         <li><%= link_to "创建话题", new_topic_path %></li>
       	<% if user_signed_in? %>
-      	  <li>
+      	  <li id="fat-menu" class="dropdown">
       	  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.username %> <b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><%= link_to raw("<span class='glyphicon glyphicon-user'> 我的帐号</span>"), current_user %></li>
-            <li><%= link_to raw("<span class='glyphicon glyphicon-cog'> 帐号设置</span>"), edit_user_path(current_user) %>
+            <li><%= link_to raw("<i class='icon-user'></i>我的帐号"), current_user %></li>
+            <li><%= link_to raw("<i class='icon-cog'></i>帐号设置"), edit_user_path(current_user) %>
             </li>
-            <li><%= link_to raw("<span class='glyphicon glyphicon-log-out'> 登出</span>"), destroy_user_session_path, :method => :delete %></li>
+            <li class="divrder"></li>
+            <li><%= link_to raw("<i class='icon-off'></i>登出"), destroy_user_session_path, :method => :delete %></li>
           </ul>
           </li>
       	<% else %>
-      		<li><%= link_to raw("<span class='glyphicon glyphicon-log-in'> 登录</span>"), new_user_session_path %></li>
-      		<li><%= link_to raw("<span class='glyphicon glyphicon-plus-sign'> 注册</span>"), new_user_registration_path %></li>
+      		<li><%= link_to raw("<i class='icon-inbox icon-white'></i>登录"), new_user_session_path %></li>
+      		<li><%= link_to raw("<i class='icon-plus icon-white'></i>注册"), new_user_registration_path %></li>
       	<% end %>
       </ul>
     </div>
+  </div>
 </div>
