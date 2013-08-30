@@ -6,19 +6,30 @@
           <% @nodes.each do |node| %>
           <%= link_to node.name, node %>
           <% end -%>
+          <%= link_to "所有话题", topics_path %>
         </div>
         
-        <div class="topics">
+        
         <% @topics.each do |topic| %>
         <div class="topic_line">
-          <div class="avatar">
-           <%= link_to image_tag(topic.user.avatar_url(:normal), :class => "img-rounded"), user_path(topic.user) %>
+        <div class="media">
+          <div class="pull-left">
+           <%= link_to image_tag(topic.user.avatar_url(:normal), :class => "img-rounded media-object"), user_path(topic.user) %>
           </div>
-        <%= link_to topic.title, topic_path(topic) %><br>
-        节点：<%= link_to topic.node.name, node_path(topic.node) %>
-        作者：<%= link_to topic.user.username, user_path(topic.user) %>
-        发布时间:<%= time_ago_in_words(topic.created_at) %><br>
+          <div class="media-body">
+            <div class="media-heading">
+              <div id="topics_title">
+              <%= link_to topic.title, topic_path(topic) %>
+              </div>
+            </div>
+            <div class="media">
+              节点：<%= link_to topic.node.name, node_path(topic.node) %>
+              作者：<%= link_to topic.user.username, user_path(topic.user) %>
+              发布时间:<%= time_ago_in_words(topic.created_at) %><br>
+            </div>
+          </div>
         </div>
+      </div>
         <% end -%>
         
       </div>

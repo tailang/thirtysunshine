@@ -2,11 +2,11 @@
 <%= form_for([@comment.commentable, @comment]) do |f| %>
 <div class="field">
   <%= f.label :comment, "添加回应" %>
-  <%= f.text_area :comment %>
+  <%= f.text_area :comment, :rows => 10  %>
 </div>
 
 <div class="action">
-  <%= f.submit "提交" %>
+  <%= f.submit "提交", :class => "btn btn-primary" %>
 </div> 
 
 <% end %>

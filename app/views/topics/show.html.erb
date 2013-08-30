@@ -1,8 +1,14 @@
 <%= provide(:title, @topic.title) %>
-<h2><%= @topic.title %></h2>
-作者：<%= @topic.user.username %>
-节点:<%= @topic.node.name %>
-<p><%= markdown @topic.body %></p>
+<div class=:rows>
+  <div class="span9">
+    <div class="box">
+	  <h2><%= @topic.title %></h2>
+  作者：<%= @topic.user.username %>
+  节点:<%= @topic.node.name %>
+  <p><%= markdown @topic.body %></p>
+  <%= render @topic.comments %><br>
+  <%= render "comments/form" %>
+</div>
+  </div>
+</div>
 
-<%= render @topic.comments %><br>
-<%= render "comments/form" %>

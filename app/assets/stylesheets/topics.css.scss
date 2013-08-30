@@ -4,12 +4,15 @@
 @import "globals/variables.css.scss";
 .topic_line{
 	border-bottom: 1px solid $grayMediumLight;
-	padding-bottom: 20px;
+	padding-bottom: 10px;
 	margin-bottom: 10px;
-
 }
- .avatar{
- 	float: left;
- 	width: auto;
- 	padding-right: 10px;
- }
+
+#topics_title{
+	white-space: nowrap;
+    width: 100%;                  /* IE6 需要定义宽度 */
+    overflow: hidden;             
+ 
+    -o-text-overflow: ellipsis;    /* Opera */
+    text-overflow:    ellipsis;    /* IE, Safari (WebKit) */
+}

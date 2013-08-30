@@ -1,2 +1,17 @@
-<%= comment.user.username %><br>
-内容：<%= markdown comment.comment %><br>
+
+<div class="comment_line">
+<div class="media">
+  <div class="pull-left">
+    <%= link_to image_tag(comment.user.avatar_url(:normal),:class => "img-rounded media-object"), user_path(comment.user) %>
+  </div>
+  <div class="media-body">
+    <div class="media-heading">
+        <%= link_to comment.user.username, user_path(comment.user) %>  
+        <%= time_ago_in_words(comment.created_at) %>
+    </div>
+    <div class="media">
+      <p class="word_break"><%= markdown comment.comment %></p>
+    </div>
+  </div>
+</div>
+</div>
