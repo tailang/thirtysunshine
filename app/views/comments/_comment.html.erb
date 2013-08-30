@@ -6,11 +6,22 @@
   </div>
   <div class="media-body">
     <div class="media-heading">
-        <%= link_to comment.user.username, user_path(comment.user) %>  
+      <div class="comment_infos">
+        <%= link_to comment.user.username, user_path(comment.user), :id => "user_name" %>  
         <%= time_ago_in_words(comment.created_at) %>
+        <div class="pull-right">
+          <span><i class="icon-pencil"></i>修改</span>
+          <span><i class="icon-remove"></i>删除</span>
+          <span><i class="icon-star-empty"></i>收藏</span>
+          <span><i class="icon-star"></i>取消收藏</span>
+          <span><i class="icon-comment"></i>回复</span>
+        </div>
+      </div>
     </div>
     <div class="media">
-      <p class="word_break"><%= markdown comment.comment %></p>
+      <div class="word_break">
+        <%= markdown comment.comment %>
+      </div>
     </div>
   </div>
 </div>

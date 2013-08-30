@@ -2,11 +2,14 @@
 <%= form_for([@comment.commentable, @comment]) do |f| %>
 <div class="field">
   <%= f.label :comment, "添加回应" %>
-  <%= f.text_area :comment, :rows => 10  %>
+  <%= f.text_area :comment, :style => "height:100px; width:667px;"  %>
 </div>
 
 <div class="action">
   <%= f.submit "提交", :class => "btn btn-primary" %>
+  <div class="pull-right">
+    <a href="#">编辑器语法帮助?</a>
+  </div>
 </div> 
 
 <% end %>

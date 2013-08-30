@@ -8,11 +8,55 @@
 	margin-bottom: 10px;
 }
 
+.topic_line_infos{
+	a{
+		font-size: 12px;
+		color: #777;
+	}
+}
+
 #topics_title{
+	font-size: 14px;
 	white-space: nowrap;
     width: 100%;                  /* IE6 需要定义宽度 */
     overflow: hidden;             
  
     -o-text-overflow: ellipsis;    /* Opera */
     text-overflow:    ellipsis;    /* IE, Safari (WebKit) */
+}
+
+.topic_infos{
+	border-bottom: 1px solid $grayMediumLight;
+	padding-bottom: 5px;
+	margin-bottom: 10px;
+	.topic_title{
+		font-size: 22px;
+        color: #333;
+        text-align: left;
+        line-height: 100%;
+        margin-bottom: 8px;
+	}
+	.topic_infos_no_title{
+		color: #bbb;
+        margin-bottom: 2px;
+        font-size: 12px;
+        a{
+        	color: #888;
+        }
+		}	
+}
+
+.topic_bottom_infos{
+	font-size: 12px;
+	border: 0px solid #ffffff;
+	padding-bottom: 7px;
+	margin-bottom: 7px;
+}
+
+.break_word{
+	word-break: break-all;
+}
+
+.topic_img{
+	margin-left: 10px;
 }

@@ -23,9 +23,10 @@
               </div>
             </div>
             <div class="media">
-              节点：<%= link_to topic.node.name, node_path(topic.node) %>
-              作者：<%= link_to topic.user.username, user_path(topic.user) %>
-              发布时间:<%= time_ago_in_words(topic.created_at) %><br>
+              <div class="topic_line_infos">
+                <span><i class="icon-tag"></i><%= link_to topic.node.name, node_path(topic.node) %></span>
+             <span>本帖由-<%= link_to topic.user.username, user_path(topic.user) %>-于<%= time_ago_in_words(topic.created_at) %>发布</span>
+              </div>
             </div>
           </div>
         </div>

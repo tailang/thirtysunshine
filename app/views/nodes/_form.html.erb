@@ -1,17 +1,22 @@
-<%= form_for(@node) do |f| %>
+<%= form_for(@node, :html => {:class => "form-horizontal"}) do |f| %>
   <%= render "shared/error_messages", :object => f.object %>
-  <div class="field">
-  	<%= f.label :name, "节点名" %>
-  	<%= f.text_field :name %>
+  <div class="control-group">
+  	<div class="control-label"><%= f.label :name, "节点名" %></div>
+  	<div class="controls"><%= f.text_field :name %></div>
   </div>
 
-  <div class="field">
-  	<%= f.label :introduction, "节点介绍" %>
-  	<%= f.text_area :introduction %>
+<div class="control-group">
+    <div class="control-label"><%= f.label :introduction, "节点介绍" %></div>
+    <div class="controls"><%= f.text_area :introduction, :style => "width:480px;" %></div>
   </div>
 
-  <div class="action">
-  	<%= f.submit "添加" %>
+  <div calss="control-group">
+  <div class="controls">
+    <%= f.submit "发布", :class => "btn btn-primary" %>
+    <div class="pull-right">
+    <a href="#">编辑器语法帮助?</a>
   </div>
+  </div>
+</div>  
 <% end %>
   

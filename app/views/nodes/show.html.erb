@@ -1,8 +1,37 @@
 <%= provide(:title, @node.name+"节点话题") %>
-该节点共有<%= @topics.count %>个话题 <br>
-<% @topics.each do |topic| %>
-  <%= link_to topic.title, topic_path(topic) %><br>
-  节点：<%= topic.node.name %>
-  作者：<%= topic.user.username %>
-  发布时间:<%= time_ago_in_words(topic.created_at) %><br>
-<% end -%>
+
+<div class="row">
+  <div class="span9">
+    <div class="box">
+      "<%= @node.name %>"节点共有<%= @topics.count %>个话题
+    </div>
+        <% unless @topics.empty? %>
+        <div class="box">
+         <% @topics.each do |topic| %>
+        <div class="topic_line">
+        <div class="media">
+          <div class="pull-left">
+           <%= link_to image_tag(topic.user.avatar_url(:normal), :class => "img-rounded media-object"), user_path(topic.user) %>
+          </div>
+          <div class="media-body">
+            <div class="media-heading">
+              <div id="topics_title">
+              <%= link_to topic.title, topic_path(topic) %>
+              </div>
+            </div>
+            <div class="media">
+              <div class="topic_line_infos">
+                <span><i class="icon-tag"></i><%= link_to topic.node.name, node_path(topic.node) %></span>
+             <span>本帖由-<%= link_to topic.user.username, user_path(topic.user) %>-于<%= time_ago_in_words(topic.created_at) %>发布</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        <% end -%>
+        </div>
+        <% end -%>
+      </div>
+      </div>
+  </div>
+</div>

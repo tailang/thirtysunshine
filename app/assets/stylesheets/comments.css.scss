@@ -9,5 +9,21 @@
 }
 
 .word_break{
+	word-wrap: break-word;
+}
+
+.comment_infos{
+	font-size: 12px;
+	border-bottom: 1px dotted $grayMediumLight;
+	padding-bottom: 5px;
+	#user_name{
+		color: #888;
+        text-decoration: none;
+        font-weight: bold;
+        margin-right: 8px;
+        &:hover{
+        	color: #555;
+        }
+	}
 	
 }

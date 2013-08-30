@@ -3,9 +3,9 @@
 用户名：<%= @user.username %><br>
 性别:
 <% if @user.gender == true %>
-  男
-<% else %>
   女
+<% else %>
+  男
 <% end %><br>
 所在地:<%= @user.province %>省.<%= @user.city %>市 <br>
 自我介绍:<p><%= @user.description %></p> <br>
