@@ -2,17 +2,30 @@
 <div class=:rows>
   <div class="span9">
     <div class="box">
-  <div class="topic_infos">
-  	<div class="pull-right topic_img">
-  	  <%= image_tag(@topic.user.avatar_url(:normal), :class => "img-rounded") %>
-  	</div>
-    <div class="topic_title break_word"><%= @topic.title %></div>
-    <div class="topic_infos_no_title">
-      <span><i class="icon-tag"></i><%= link_to @topic.node.name, node_path(@topic.node) %></span>
-      <span>本帖由-<%= link_to @topic.user.username, user_path(@topic.user) %>-于<%= time_ago_in_words(@topic.created_at) %>发布</span>
-    </div>
-  </div>
-  <div class="break_word">
+      <div class="media">
+        <div class="pull-right">
+          <%= link_to image_tag(@topic.user.avatar_url(:normal), :class => "img-rounded media-object"), user_path(@topic.user) %>
+        </div>
+      <div class="topic_infos">
+        <div class="media-body">
+          <div class="media-heading">
+            <div class="topic_title break_word">
+              <%= @topic.title %>
+            </div>           
+          </div>
+
+          <div class="media">
+          <div class="topic_infos_no_title">
+          <span><i class="icon-tag"></i><%= link_to @topic.node.name, node_path(@topic.node) %></span>
+          <span>本帖由-<%= link_to @topic.user.username, user_path(@topic.user) %>-于<%= time_ago_in_words(@topic.created_at) %>发布</span>
+          </div>
+        </div>
+
+        </div>
+      </div>
+      </div>
+
+  <div class="content_doc">
     <%= markdown @topic.body %>
   </div>
   
@@ -20,8 +33,10 @@
   
   	<div class="topic_bottom_infos">
   	  <div class="pull-right">
-  	   <span><i class="icon-pencil"></i>修改</span>
-  	   <span><i class="icon-remove"></i>删除</span>
+  	   <%= link_to raw('<span><i class="icon-pencil"></i>修改</span>'), edit_topic_path(@topic) %>
+  	   <%= link_to raw('<span><i class="icon-remove"></i>删除</span>'), topic_path(@topic),
+                                                                       :method => :delete,
+                                                                       :confirm => "确定删除吗？" %>
   	   <span><i class="icon-star-empty"></i>收藏</span>
   	   <span><i class="icon-star"></i>取消收藏</span>
       </div>

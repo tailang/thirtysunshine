@@ -13,6 +13,28 @@ class CommentsController < ApplicationController
   	end
   end
 
+  def edit
+    @comment = commentable_record.comments.find(params[:id]) 
+  end
+
+
+  def destroy
+    @comment = commentable_record.comments.find(params[:id])    
+    @comment.destroy
+    redirect_to commentable_record
+    flash[:success] = '成功删除评论'
+  end
+  
+  def update
+    @comment = commentable_record.comments.find(params[:id])  
+    if @comment.update_attributes(params[:comment])
+      redirect_to commentable_record
+      flash[:success] = "成功修改评论"
+    else
+      render :action => "edit"
+    end
+  end
+
   protected
 
   def commentable_record

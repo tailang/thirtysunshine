@@ -1,9 +1,10 @@
-<%= provide(:title, @node.name+"节点话题") %>
+<%= provide(:title, @node.name+"-节点话题") %>
 
 <div class="row">
   <div class="span9">
     <div class="box">
-      "<%= @node.name %>"节点共有<%= @topics.count %>个话题
+      "<%= @node.name %>"节点共有<%= @topics.count %>个话题 // 
+      <%= link_to "返回全部话题", topics_path %>
     </div>
         <% unless @topics.empty? %>
         <div class="box">
@@ -23,6 +24,9 @@
               <div class="topic_line_infos">
                 <span><i class="icon-tag"></i><%= link_to topic.node.name, node_path(topic.node) %></span>
              <span>本帖由-<%= link_to topic.user.username, user_path(topic.user) %>-于<%= time_ago_in_words(topic.created_at) %>发布</span>
+             <div class="pull-right">
+                 <span class="label label-info"><%= topic.comments.count %></span>
+               </div>
               </div>
             </div>
           </div>

@@ -10,8 +10,10 @@
         <%= link_to comment.user.username, user_path(comment.user), :id => "user_name" %>  
         <%= time_ago_in_words(comment.created_at) %>
         <div class="pull-right">
-          <span><i class="icon-pencil"></i>修改</span>
-          <span><i class="icon-remove"></i>删除</span>
+          <%= link_to raw('<span><i class="icon-pencil"></i>修改</span>'), edit_topic_comment_path(comment.commentable,comment)  %>
+          <%= link_to raw('<span><i class="icon-remove"></i>删除</span>'),  topic_comment_path(comment.commentable, comment),
+                                                                          :method => :delete,
+                                                                          :confirm => "确定删除该评论?" %>
           <span><i class="icon-star-empty"></i>收藏</span>
           <span><i class="icon-star"></i>取消收藏</span>
           <span><i class="icon-comment"></i>回复</span>
@@ -19,7 +21,7 @@
       </div>
     </div>
     <div class="media">
-      <div class="word_break">
+      <div class="content_doc">
         <%= markdown comment.comment %>
       </div>
     </div>

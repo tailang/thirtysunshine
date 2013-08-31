@@ -49,5 +49,9 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
-
+  def filename
+    if super.present?
+      "avatar/#{model.id}.#{file.extension.downcase}"
+    end
+  end
 end

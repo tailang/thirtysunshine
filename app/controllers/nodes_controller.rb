@@ -22,4 +22,5 @@ class NodesController < ApplicationController
   	  render :action => new
   	end
   end
+  
 end
