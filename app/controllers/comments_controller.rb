@@ -2,8 +2,7 @@
 class CommentsController < ApplicationController
   def create
   	@comment = commentable_record.comments.create(params[:comment])
-  	@comment.user = current_user
-
+  	@comment.user = current_user 
   	if @comment.save
   	  redirect_to commentable_record
   	  flash[:success] = "成功创建评论"
