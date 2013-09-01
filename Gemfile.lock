@@ -33,6 +33,8 @@ GEM
     bcrypt-ruby (3.0.1)
     bootstrap-sass (2.3.2.0)
       sass (~> 3.2)
+    bootstrap-will_paginate (0.0.9)
+      will_paginate
     builder (3.0.4)
     carrierwave (0.6.2)
       activemodel (>= 3.2.0)
@@ -118,6 +120,7 @@ GEM
       multi_json (~> 1.0, >= 1.0.2)
     warden (1.2.1)
       rack (>= 1.0)
+    will_paginate (3.0.4)
 
 PLATFORMS
   ruby
@@ -125,6 +128,7 @@ PLATFORMS
 DEPENDENCIES
   acts_as_commentable (= 3.0.1)
   bootstrap-sass (~> 2.3.2)
+  bootstrap-will_paginate (~> 0.0.9)
   carrierwave (= 0.6.2)
   coderay
   coffee-rails (~> 3.2.1)
@@ -136,3 +140,4 @@ DEPENDENCIES
   redcarpet
   sass-rails (~> 3.2.3)
   uglifier (>= 1.0.3)
+  will_paginate (~> 3.0.4)

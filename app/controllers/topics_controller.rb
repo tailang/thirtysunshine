@@ -2,7 +2,7 @@
 class TopicsController < ApplicationController
 
   def index
-  	@topics = Topic.all
+  	@topics = Topic.paginate(:page => params[:page], :per_page => 15)
     @nodes = Node.all
   end
 

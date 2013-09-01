@@ -37,8 +37,11 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
-#gem 'anjlab-bootstrap-rails', '3.0.0.0', :require => 'bootstrap-rails'
+
 gem 'bootstrap-sass', '~> 2.3.2'
+gem 'will_paginate', '~> 3.0.4'
+gem 'bootstrap-will_paginate', '~> 0.0.9'
+
 gem 'devise', '~> 2.2.4'
 
 #uploader

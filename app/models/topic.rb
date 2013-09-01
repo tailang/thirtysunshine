@@ -1,5 +1,5 @@
 class Topic < ActiveRecord::Base
-  attr_accessible :title, :body, :node_id, :last_actived_mark
+  attr_accessible :title, :body, :node_id
   acts_as_commentable
 
   belongs_to :user

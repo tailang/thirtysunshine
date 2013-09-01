@@ -6,7 +6,7 @@ class NodesController < ApplicationController
 
   def show
     @node = Node.find(params[:id])
-    @topics = @node.topics
+    @topics = @node.topics.paginate(:page => params[:page], :per_page => 15)
   end
   
   def new
