@@ -1,0 +1,21 @@
+<div class="img_username">
+  <div class="media">
+<div class="pull-left">
+  <%= link_to image_tag(current_user.avatar_url(:normal), :class => "img-rounded media-object"), user_path(current_user) %>
+</div>
+ <div class="media-body">
+ 	<div class="media-heading">
+ 	  <%= link_to current_user.username, user_path(current_user) %>
+ 	</div>
+ </div>
+</div>
+</div>
+<%= link_to "创建话题", new_topic_path, :class => "btn btn-success" %>
+
+
+
+
+
+
+
+
