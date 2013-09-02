@@ -36,10 +36,19 @@
      <%= will_paginate @topics, :previous_label => '<前页', :next_label => '后页>' %> 
       </div>
       </div>
-
       <div class="span3">
         <div class="box">
-          <%= render "shared/user_infos" %>
+     <% if user_signed_in? %>     
+          <%= render "shared/user_infos" %>   
+    <% else %>
+          <%= render "shared/welcome" %>
+     <% end %>
+        </div>
+        <div class="box">
+          <%= render "shared/browser" %>
+        </div>
+        <div class="box">
+          <%= render "shared/site_stats" %>
         </div>
       </div>
   </div>

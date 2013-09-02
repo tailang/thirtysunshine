@@ -3,7 +3,7 @@
     
     <%= form_for(@user, :html => {:class => "form-horizontal"}) do |f| %>
     <div class="box">
-      <span id="existing-account">帐号设置</span>
+      <span class="box_header">帐号设置</span>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="control-group">
     <div class="control-label">修改头像</div>
@@ -107,7 +107,7 @@
   </div>
   <div class="box">
     <div class="actions">
-    <%= f.submit "保存设置", :class => "btn btn-primary" %>
+    <%= f.submit "保存设置", :class => "btn btn-success" %>
     <div class="pull-right">
       <%= link_to "修改密码", edit_registration_path(@user), :class => "btn" %>
     </div>
