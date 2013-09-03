@@ -1,14 +1,21 @@
 Thirtysunshine::Application.routes.draw do
   
+  get "follows/create"
+
+  get "follows/destroy"
+
   devise_for :users
 
-  resources :users
-  
-  resources :topics do
-    resources :comments
-  end
+  resources :users 
 
   resources :nodes
+
+  resources :topics do
+    resources :comments
+    resource :follow
+  end
+
+
 
 
   get "staticpages/index"

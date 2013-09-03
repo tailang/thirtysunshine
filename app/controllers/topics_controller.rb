@@ -1,6 +1,6 @@
 #encoding: utf-8
 class TopicsController < ApplicationController
-
+  before_filter :authenticate_user!, :except => [:index, :show]
   def index
   	@topics = Topic.paginate(:page => params[:page], :per_page => 15)
     @nodes = Node.all

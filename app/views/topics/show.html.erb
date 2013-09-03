@@ -56,8 +56,15 @@ var jiathis_config={
   	   <%= link_to raw('<span><i class="icon-remove"></i>删除</span>'), topic_path(@topic),
                                                                        :method => :delete,
                                                                        :confirm => "确定删除吗？" %>
-  	   <span><i class="icon-star-empty"></i>收藏</span>
-  	   <span><i class="icon-star"></i>取消收藏</span>
+        <% if user_signed_in? %>
+          <% if current_user.following?(@topic) %>
+            <%= link_to raw('<span><i class="icon-star"></i>取消收藏</span>'), [@topic, :follow], :method => :delete %>
+            <% else %>
+            <%= link_to raw('<span><i class="icon-star-empty"></i>收藏</span>'), [@topic, :follow], :method => :post %>
+          <% end %>
+        <% end %>
+  	   
+  	   
       </div>
     </div>
 

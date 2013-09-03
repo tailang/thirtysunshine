@@ -1,7 +1,8 @@
 class Topic < ActiveRecord::Base
   attr_accessible :title, :body, :node_id
   acts_as_commentable
-
+  acts_as_followable
+  
   belongs_to :user
   belongs_to :node
 

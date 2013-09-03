@@ -1,5 +1,6 @@
 #encoding: utf-8
 class CommentsController < ApplicationController
+  before_filter :authenticate_user!, :only => [:create, :edit, :destroy, :update]
   def create
   	@comment = commentable_record.comments.create(params[:comment])
   	@comment.user = current_user 

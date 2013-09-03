@@ -1,5 +1,6 @@
 #encoding: utf-8
 class NodesController < ApplicationController
+  before_filter :authenticate_user!, :except => [:show, :index]
   def index
   	@nodes = Node.all
   end

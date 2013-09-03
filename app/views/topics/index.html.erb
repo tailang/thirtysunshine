@@ -4,7 +4,7 @@
     <div class="box">
         <div id="node_info">
           <% @nodes.each do |node| %>
-          <%= link_to node.name, node %>
+            <%= link_to node.name, node %>         
           <% end -%>
         </div>
         
@@ -25,7 +25,14 @@
                 <span><i class="icon-tag"></i><%= link_to topic.node.name, node_path(topic.node) %></span>
              <span>本帖由-<%= link_to topic.user.username, user_path(topic.user) %>-于<%= time_ago_in_words(topic.created_at) %>发布</span>
                <div class="pull-right">
-                 <span class="label label-info"><%= topic.comments.count %></span>
+                 <span class="label label-info">
+                  <% topic_count = topic.comments.count %>
+                  <% if topic_count > 0 %>
+                    <%= topic_count %>
+                  <% else %>
+                    抢沙发啦!
+                  <% end %>
+                </span>
                </div>
               </div>
             </div>

@@ -13,6 +13,12 @@
 微博:<%= @user.sinaweibo %><br>
 个人博客:<%= @user.site %><br><br>
 
+收藏:<%= @user.follow_count %>
+
+     <% @user.follows_by_type('Topic').each do |topic|%>
+       <%= link_to topic.followable.title, topic_path(topic.followable) %>
+     <% end -%>
+<br>
 创建的话题:<br>
 <% @user.topics.each do |topic| %>
   <%= topic.title %><br>
