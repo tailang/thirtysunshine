@@ -1,12 +1,13 @@
 #encoding: utf-8
 class NodesController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :index]
+  load_and_authorize_resource
   def index
-  	@nodes = Node.all
+  	#@nodes = Node.all
   end
 
   def show
-    @node = Node.find(params[:id])
+    #@node = Node.find(params[:id])
     @topics = @node.topics.paginate(:page => params[:page], :per_page => 15)
   end
   

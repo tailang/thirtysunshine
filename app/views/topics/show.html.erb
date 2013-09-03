@@ -52,10 +52,10 @@ var jiathis_config={
 
 
   	  <div class="pull-right">
-  	   <%= link_to raw('<span><i class="icon-pencil"></i>修改</span>'), edit_topic_path(@topic) %>
+  	   <%= link_to raw('<span><i class="icon-pencil"></i>修改</span>'), edit_topic_path(@topic) if can? :update, @topic %>
   	   <%= link_to raw('<span><i class="icon-remove"></i>删除</span>'), topic_path(@topic),
                                                                        :method => :delete,
-                                                                       :confirm => "确定删除吗？" %>
+                                                                       :confirm => "确定删除吗？" if can? :destroy, @topic %>
         <% if user_signed_in? %>
           <% if current_user.following?(@topic) %>
             <%= link_to raw('<span><i class="icon-star"></i>取消收藏</span>'), [@topic, :follow], :method => :delete %>
@@ -71,9 +71,8 @@ var jiathis_config={
 </div>
 <% unless @topic.comments.empty?%>
 	<div class="box">
-  <% comments = @topic.comments.paginate(:page => params[:page], :per_page => 20) %>
-    <%= render :partial => 'comments/comment', :locals => { :comments => comments } %>
-  <%= will_paginate comments, :previous_label => '<前页', :next_label => '后页>' %>
+    <%= render :partial => 'comments/comment', :locals => { :comments => @comments } %>
+  <%= will_paginate @comments, :previous_label => '<前页', :next_label => '后页>' %>
  </div>
 <% end %>
  <div class="box">
