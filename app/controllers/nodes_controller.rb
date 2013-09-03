@@ -24,5 +24,10 @@ class NodesController < ApplicationController
   	  render :action => new
   	end
   end
+
   
+  def destroy
+    @node.destroy
+    redirect_to nodes_path
+  end
 end

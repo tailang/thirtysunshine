@@ -5,6 +5,7 @@
   	  <% @nodes.each do |node| %>
        <%= node.name %>
        <%= markdown node.introduction %>
+       <%= link_to "删除", node, :method => :delete, :confirm => "谨慎操作，删除后对应的topic将无法显示"%><br>
       <% end -%>
   	</div>
   </div>
