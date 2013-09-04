@@ -1,0 +1,4 @@
+<%= provide(:title, "消息") %>
+<% @notifications.each do |notification| %>
+  <%= notification.comment.comment %><br>
+<% end %>

@@ -14,8 +14,15 @@
       </ul>
 
       <ul class="nav pull-right">
-        <li><%= link_to "创建节点", new_node_path %></li>
       	<% if user_signed_in? %>
+        <% @unread_count = current_user.notifications.where(unread: true).count %>
+        <li>
+          <div class="head-action">
+        <div class="badge badge-important">
+          <%= link_to "#{@unread_count}", notifications_path %>
+        </div>
+          </div>
+        </li>
       	  <li id="fat-menu" class="dropdown">
       	  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.username %> <b class="caret"></b></a>
           <ul class="dropdown-menu">

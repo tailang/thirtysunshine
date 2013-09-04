@@ -14,7 +14,6 @@
           <%= link_to raw('<span><i class="icon-remove"></i>删除</span>'),  topic_comment_path(comment.commentable, comment),
                                                                           :method => :delete,
                                                                           :confirm => "确定删除该评论?" if can? :destroy, comment%>
-          <span><i class="icon-comment"></i>回复</span>
         </div>
       </div>
     </div>

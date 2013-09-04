@@ -1,25 +1,21 @@
 Thirtysunshine::Application.routes.draw do
   
-  get "follows/create"
+  get "notifications/index"
 
-  get "follows/destroy"
+  # get "follows/create"
+
+  # get "follows/destroy"
 
   devise_for :users
-
   resources :users 
-
+  resources :notifications
   resources :nodes
-
   resources :topics do
     resources :comments
     resource :follow
   end
 
-
-
-
   get "staticpages/index"
-
   root :to => "topics#index"
 
   # The priority is based upon order of creation:
