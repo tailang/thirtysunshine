@@ -15,12 +15,9 @@
 
       <ul class="nav pull-right">
       	<% if user_signed_in? %>
-        <% @unread_count = current_user.notifications.where(unread: true).count %>
         <li>
           <div class="head-action">
-        <div class="badge badge-important">
-          <%= link_to "#{@unread_count}", notifications_path %>
-        </div>
+          <%= link_to count_unread_notification, notifications_path, :class => "badge badge-important" %>
           </div>
         </li>
       	  <li id="fat-menu" class="dropdown">
