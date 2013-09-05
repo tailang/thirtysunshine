@@ -44,19 +44,7 @@
       </div>
       </div>
       <div class="span3">
-        <div class="box">
-     <% if user_signed_in? %>     
-          <%= render "shared/user_infos" %>   
-    <% else %>
-          <%= render "shared/welcome" %>
-     <% end %>
-        </div>
-        <div class="box">
-          <%= render "shared/browser" %>
-        </div>
-        <div class="box">
-          <%= render "shared/site_stats" %>
-        </div>
+        <%= render 'shared/side_render' %>
       </div>
   </div>
 

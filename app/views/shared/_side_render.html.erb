@@ -1,0 +1,17 @@
+<% if user_signed_in? %>
+  <div class="box">
+  	<%= render 'shared/user_infos' %>
+  </div>
+<% else %>
+  <div class="box">
+  <%= render 'shared/welcome' %>
+  </div>
+<% end %>
+
+<div class="box">
+  <%= render 'shared/browser' %>
+</div>
+
+<div class="box">
+  <%= render 'shared/site_stats' %>
+</div>

@@ -1,5 +1,5 @@
 <%= provide(:title, @topic.title) %>
-<div class=:rows>
+<div class="row">
   <div class="span9">
     <div class="box">
       <div class="media">
@@ -33,7 +33,7 @@
   
   	<div class="topic_bottom_infos">
 
- <!-- JiaThis Button BEGIN -->
+ <!-- JiaThis Button BEGIN --><!-- 
 <div class="jiathis_style">
 <a class="jiathis_button_douban">豆瓣</a>
 <a class="jiathis_button_tsina">新浪微博</a>
@@ -47,7 +47,7 @@ var jiathis_config={
   hideMore:true
 }
 </script>
-<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+ --><!-- <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script> -->
 <!-- JiaThis Button END -->
 
 
@@ -75,11 +75,19 @@ var jiathis_config={
   <%= will_paginate @comments, :previous_label => '<前页', :next_label => '后页>' %>
  </div>
 <% end %>
+
  <div class="box">
-  <%= render "comments/form" %>
+  <% if user_signed_in? %>
+    <%= render "comments/form" %>
+  <% else %>
+    登录后可以添加评论哦!
+    <%= link_to "登录", new_user_session_path, :class => "btn" %>
+    <%= link_to "注册", new_user_registration_path, :class => "btn btn-success" %>
+  <% end %>
  </div>
 </div>
+<div class="span3">
+  <%= render 'shared/side_render' %>
 </div>
-  </div>
 </div>
 

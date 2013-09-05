@@ -15,7 +15,7 @@
  
  
       <%= f.label :body, "话题内容" %>
-      <%= f.ueditor_text :body, :height => 500, :width => 670, :toolbars => [['undo', 'redo','link','insertimage', 'map', 'preview', 'fullscreen']] %>
+      <%= f.ueditor_text :body, :height => 500, :width => 670, :toolbars => [['undo', 'redo','|','link','insertimage', '|', 'preview', 'fullscreen']] %>
       <br>
     <div class="action">
       <%= f.submit "发布", :class => "btn btn-primary" %>

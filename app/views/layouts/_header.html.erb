@@ -5,7 +5,13 @@
       <ul class="nav navbar-nav pull-left">
         <li><%= link_to "社区", topics_path %></li>
         <li><%= link_to "成员", users_path %></li>
-        <li><a href="#">关于</a></li>
+        <li id="fat-menu" class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">关于<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "关于我们", "/topics/1" %></li>
+            <li><%= link_to "感谢", "/topics/2" %></li>
+          </ul>
+        </li>
         <form class="navbar-form pull-left">
            <div class="form-group" id="search">
              <input type="text" class="form-control" placeholder="Search">
