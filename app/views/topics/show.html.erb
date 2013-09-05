@@ -33,23 +33,20 @@
   
   	<div class="topic_bottom_infos">
 
- <!-- JiaThis Button BEGIN --><!-- 
-<div class="jiathis_style">
-<a class="jiathis_button_douban">豆瓣</a>
-<a class="jiathis_button_tsina">新浪微博</a>
-
-<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<!-- Baidu Button BEGIN -->
+<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
+<a class="bds_tsina"></a>
+<a class="bds_douban"></a>
+<a class="bds_qzone"></a>
+<a class="bds_renren"></a>
+<span class="bds_more">更多</span>
 </div>
-<script type="text/javascript" >
-var jiathis_config={
-  summary:"",
-  shortUrl:false,
-  hideMore:true
-}
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;mini=1&amp;uid=6808982" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
 </script>
- --><!-- <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script> -->
-<!-- JiaThis Button END -->
-
+<!-- Baidu Button END -->
 
   	  <div class="pull-right">
   	   <%= link_to raw('<span><i class="icon-pencil"></i>修改</span>'), edit_topic_path(@topic) if can? :update, @topic %>
