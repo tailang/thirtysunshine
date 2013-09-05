@@ -1,10 +1,8 @@
 <% @comment ||= @topic.comments.build %>
 <%= form_for([@comment.commentable, @comment]) do |f| %>
-<div class="field">
   <%= f.label :comment, "添加回应" %>
-  <%= f.text_area :comment, :style => "height:100px; width:667px;"  %>
-</div>
-
+  <%= f.ueditor_text :comment, :height => 50, :width => 667, :toolbars => [['undo', 'redo','link','insertimage', 'map', 'preview']] %>
+<br>
 <div class="action">
   <%= f.submit "提交", :class => "btn btn-primary" %>
   <div class="pull-right">

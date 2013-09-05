@@ -21,6 +21,7 @@ class UsersController < ApplicationController
   	  flash[:success] = "设置成功"
   	else
   	  render action: "edit"
+      flash[:success] = "设置失败"
   	end
   end
 end

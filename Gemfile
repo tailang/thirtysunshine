@@ -38,3 +38,7 @@ gem "acts_as_follower"
 #markdown
 gem 'redcarpet'
 gem 'coderay'
+
+#uedit
+gem 'ueditor_rails'
+

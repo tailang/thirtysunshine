@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
   	@comment.user = current_user 
   	if @comment.save
   	  redirect_to commentable_record
-  	  flash[:success] = "成功创建评论"
+  	  #flash[:success] = "成功创建评论"
   	else
   	  redirect_to commentable_record
   	  flash[:error] = "创建评论失败"
@@ -30,9 +30,10 @@ class CommentsController < ApplicationController
     #@comment = commentable_record.comments.find(params[:id])  
     if @comment.update_attributes(params[:comment])
       redirect_to commentable_record
-      flash[:success] = "成功修改评论"
+      #flash[:success] = "成功修改评论"
     else
       render :action => "edit"
+      flash[:success] = "修改评论失败"
     end
   end
 

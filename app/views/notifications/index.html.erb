@@ -1,4 +1,4 @@
 <%= provide(:title, "消息") %>
 <% @notifications.each do |notification| %>
-  <%= notification.comment.comment %><br>
+  <%= link_to notification.comment.commentable.title, topic_path(notification.comment.commentable) %><br>
 <% end %>

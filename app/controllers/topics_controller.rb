@@ -26,9 +26,9 @@ class TopicsController < ApplicationController
   	@topic.user = current_user
   	if @topic.save
   	  redirect_to @topic
-  	  flash[:success] = "成功创建话题"
   	else
   	  render :action => "new"
+      flash[:success] = "创建话题失败"
   	end
   end
 
