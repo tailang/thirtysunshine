@@ -15,7 +15,7 @@ class Ability
      end
 
       can :create, Comment
-      can [:update, :destroy], Comment do |comment|
+      can [:destroy], Comment do |comment|
         comment.user_id == user.id
       end
        

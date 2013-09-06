@@ -5,7 +5,7 @@
   <% comments.each do |comment| %>
   <div class="topic_line">
   	<div id="current_topics_title">
-    话题：<%= link_to comment.commentable.title, topic_path(comment.commentable) %><br>
+    <i class="icon-file"></i>话题：<%= link_to comment.commentable.title, topic_path(comment.commentable) %><br>
     </div>
   	<%= output_content comment.comment %>
   </div>

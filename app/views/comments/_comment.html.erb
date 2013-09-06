@@ -10,7 +10,6 @@
         <%= link_to comment.user.username, user_path(comment.user), :id => "user_name" %>  
         发表与<%= time_ago_in_words(comment.created_at) %>
         <div class="pull-right">
-          <%= link_to raw('<span><i class="icon-pencil"></i>修改</span>'), edit_topic_comment_path(comment.commentable,comment) if can? :update, comment %>
           <%= link_to raw('<span><i class="icon-remove"></i>删除</span>'),  topic_comment_path(comment.commentable, comment),
                                                                           :method => :delete,
                                                                           :confirm => "确定删除该评论?" if can? :destroy, comment%>

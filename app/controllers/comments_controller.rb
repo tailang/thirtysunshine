@@ -14,9 +14,9 @@ class CommentsController < ApplicationController
   	end
   end
 
-  def edit
-    #@comment = commentable_record.comments.find(params[:id]) 
-  end
+  # def edit
+  #   #@comment = commentable_record.comments.find(params[:id]) 
+  # end
 
 
   def destroy
