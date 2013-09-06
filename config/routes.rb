@@ -10,13 +10,9 @@ Thirtysunshine::Application.routes.draw do
     resource :follow
   end
 
-  resources :users, :path => "" do
-    member do
-      get :topics
-      get :comments
-      get :follows
-    end
-  end
+  match 'users/:id/topics' => 'users#topics', :as => :topics_user
+  match 'users/:id/comments' => 'users#comments', :as => :comments_user
+  match 'users/:id/follows' => 'users#follows', :as => :follows_user
 
   get "staticpages/index"
   get "notifications/index"
