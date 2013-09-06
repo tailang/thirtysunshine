@@ -27,11 +27,46 @@
          男
       <% end %>
   </li>
-  <li class="user_imformation">所在地: <%= @user.province %>.<%= @user.city %></li>
-  <li class="user_imformation">学校: <%= @user.school %></li>
-  <li class="user_imformation">豆瓣: <%= link_to @user.douban, "#{@user.douban}", :target => "_blank" %></li>
-  <li class="user_imformation">微博: <%= link_to @user.sinaweibo, "#{@user.sinaweibo}", :target => "_blank" %></li>
-  <li class="user_imformation">个人博客: <%= link_to @user.site, "#{@user.site}", :target => "_blank" %></li>
+
+  <li class="user_imformation">
+  <% unless @user.province.blank? or @user.city.blank?  %>
+  所在地: <%= @user.province %>.<%= @user.city %>
+  <% else %>
+  所在地: 未设置
+  <% end %>
+  </li>
+
+  <li class="user_imformation">
+    <% unless @user.school.blank?%>
+    学校: <%= @user.school %>
+    <% else %>
+    学校: 未设置
+    <% end -%>
+  </li>
+
+  <li class="user_imformation">
+    <% unless @user.douban.blank?%>
+    豆瓣: <%= link_to @user.douban, "#{@user.douban}", :target => "_blank" %>
+    <% else %>
+    豆瓣: 未设置
+    <% end -%>
+  </li>
+
+  <li class="user_imformation">
+    <% unless @user.sinaweibo.blank?%>
+    微博: <%= link_to @user.sinaweibo, "#{@user.sinaweibo}", :target => "_blank" %>
+    <% else %>
+    微博: 未设置
+    <% end -%>
+  </li>
+
+<li class="user_imformation">
+    <% unless @user.site.blank?%>
+    个人博客: <%= link_to @user.site, "#{@user.site}", :target => "_blank" %>
+    <% else %>
+    个人博客: 未设置
+    <% end -%>
+  </li>
 </ul>
   	</div>
      <%= render :partial => "shared/side_box_home_page/current_topics", :locals => {:topics => @topics} %>
@@ -40,18 +75,6 @@
 <div class="span3">
 <%= render :partial => "shared/side_box_home_page/states", :locals => {:user => @user} %>
 <%= render :partial => "shared/side_box_home_page/description", :locals => {:user => @user} %>
-<%= render :partial => "shared/side_box_home_page/douban", :locals => {:user => @user} %>
-
+<%= render :partial => "shared/side_box_home_page/douban", :locals => {:user => @user} unless @user.douban.blank? %>
 </div>
 </div>
-
-收藏:<%= @user.follow_count %>
-
-     <% @user.follows_by_type('Topic').each do |topic|%>
-       <%= link_to topic.followable.title, topic_path(topic.followable) %>
-     <% end -%>
-<br>
-创建的话题:<br>
-<% @user.topics.each do |topic| %>
-  <%= topic.title %><br>
-<% end -%>

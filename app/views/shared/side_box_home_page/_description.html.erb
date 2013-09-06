@@ -1,4 +1,8 @@
 <div class="box">
     <div class="box_header">个人简介</div>
+    <% unless user.description.blank? %>
     <%= user.description %>
+    <% else %>
+    该用户有点懒，未填写
+    <% end -%>
  </div>

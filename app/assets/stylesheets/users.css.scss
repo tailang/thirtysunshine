@@ -23,8 +23,9 @@
 }
 
 .state_box_home_page{
-	padding-top: 5px;
+	//padding-top: 5px;
 	padding-bottom: 45px;
+	margin-bottom: 15px;
 }
 .user_id{
 	color: $grayLight;
@@ -44,6 +45,14 @@
     text-align: center;
     border-right: 1px solid #eeeeee;
     line-height: 18px;
+    a{
+    	color: #2c3e50;
+    	&:hover{
+    		color: #2c3e50;
+    		text-decoration: none;
+    	}
+    }
+    
     &:last-child{
 			border: 0;
 		}

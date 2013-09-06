@@ -1,0 +1,5 @@
+<%= provide(:title, "评论") %>
+<% @comments.each do |comment| %>
+  <%= output_content comment.comment %>
+<% end -%>
+<%= will_paginate @comments, :previous_label => '<前页', :next_label => '后页>' %>

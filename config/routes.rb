@@ -18,6 +18,7 @@ Thirtysunshine::Application.routes.draw do
   resources :users, :path => "" do
     member do
       get :topics
+      get :comments
       get :follows
     end
   end

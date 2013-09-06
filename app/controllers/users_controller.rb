@@ -1,8 +1,8 @@
 #encoding: utf-8
 class UsersController < ApplicationController
-  before_filter :authenticate_user!, :except => [:index, :show, :topics]
+  before_filter :authenticate_user!, :except => [:index, :show, :topics, :follows, :comments]
   load_and_authorize_resource
-  skip_load_and_authorize_resource :only => [:topics, :follows]
+  skip_load_and_authorize_resource :only => [:topics, :follows, :comments]
   def index
   	#@users = User.all
   end
@@ -36,5 +36,10 @@ class UsersController < ApplicationController
   def follows
     @user = User.find(params[:id])
     @follow_topics = @user.follows.paginate(:page => params[:page], :per_page => 1)
+  end
+
+  def comments
+    @user = User.find(params[:id])
+    @comments = @user.comments.paginate(:page => params[:page], :per_page => 1)
   end
 end
