@@ -33,3 +33,17 @@
 	margin-right: 7px;
 	margin-bottom: 10px;
 }
+
+#current_topics_title{
+	border-bottom: 1px dotted $grayMediumLight;
+	padding-bottom: 3px;
+	margin-bottom: 10px;
+
+	font-size: 14px;
+	white-space: nowrap;
+    width: 100%;                  /* IE6 需要定义宽度 */
+    overflow: hidden;             
+ 
+    -o-text-overflow: ellipsis;    /* Opera */
+    text-overflow:    ellipsis;    /* IE, Safari (WebKit) */
+}

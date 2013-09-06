@@ -1,3 +1,4 @@
+<div class="box">
 <div class="img_username">
   <div class="media">
 <div class="pull-left">
@@ -10,9 +11,25 @@
  </div>
 </div>
 </div>
+
+<div class="state_box">
+  <div class="state">
+  	<%= current_user.comments.count %> <br>
+  	回复
+  </div>
+  <div class="state">
+  	<%= current_user.topics.count %> <br>
+  	话题
+  </div>
+  <div class="state">
+  	<%= current_user.follow_count %> <br>
+  	收藏
+  </div>
+</div>
+
 <%= link_to "创建话题", new_topic_path, :class => "btn btn-success" %>
 
-
+</div>
 
 
 

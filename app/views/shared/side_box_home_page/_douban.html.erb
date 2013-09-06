@@ -1,0 +1,23 @@
+<% unless user.douban.blank? %>
+<div class="box">
+  <div class="box_header">
+    正在看的书:
+  </div>
+    <script type="text/javascript" src="http://www.douban.com/service/badge/<%= user.douban.split('/').compact.last %>/?show=dolist&amp;n=6&amp;columns=3&amp;hidelogo=yes&amp;hideself=yes&amp;cat=book" ></script>
+</div>
+
+<div class="box">
+  <div class="box_header">
+    想看的书:
+  </div>
+  <script type="text/javascript" src="http://www.douban.com/service/badge/<%= user.douban.split('/').compact.last %>/?show=wishlist&amp;n=6&amp;columns=3&amp;hidelogo=yes&amp;hideself=yes&amp;cat=book" ></script>
+</div>
+
+<div class="box">
+  <div class="box_header">
+    看过的书:
+  </div>
+    <script type="text/javascript" src="http://www.douban.com/service/badge/<%= user.douban.split('/').compact.last %>/?show=collection&amp;n=6&amp;columns=3&amp;hidelogo=yes&amp;hideself=yes&amp;cat=book" ></script>
+
+</div>
+<% end -%>

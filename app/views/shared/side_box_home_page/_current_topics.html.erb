@@ -1,0 +1,12 @@
+<div class="box">
+  <div class="box_header">最近发表的话题</div>
+   <% topics.each do |topic| %>
+   <div class="topic_line">
+   <div id="topics_title">
+   	 <div class="label current_topic_node"><%= link_to topic.node.name, node_path(topic.node) %></div>
+   	 <div class="label label-info pull-right"><%= topic.comments.count %></div>
+     <%= link_to topic.title, topic_path(topic) %>
+   </div>
+   </div>
+   <% end -%>
+</div>

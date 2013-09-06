@@ -1,0 +1,10 @@
+<% if user_signed_in? %>
+  	<%= render 'shared/user_infos' %>
+<% else %>
+  <%= render 'shared/welcome' %>
+<% end %>
+
+  <%= render 'shared/browser' %>
+
+  <%= render 'shared/site_stats' %>
+

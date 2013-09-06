@@ -1,0 +1,5 @@
+<%= provide(:title, "收藏") %>
+<% @follow_topics.each do |topic| %>
+  <%= link_to topic.followable.title, topic_path(topic.followable) %>
+<% end -%>
+<%= will_paginate @follow_topics, :previous_label => '<前页', :next_label => '后页>' %>

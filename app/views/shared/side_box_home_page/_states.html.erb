@@ -1,0 +1,14 @@
+<div class="box">
+    <div class="state_box_home_page">
+  <div class="state">
+    <%= link_to raw("#{user.topics.count}<br>话题"), topics_user_path(user) %>
+  </div>
+  <div class="state">
+    <%= user.comments.count %> <br>
+    回复
+  </div>
+  <div class="state">
+    <%= link_to raw("#{user.follow_count}<br>收藏"), follows_user_path(user) %>
+  </div>
+</div>
+  </div>

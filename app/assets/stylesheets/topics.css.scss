@@ -66,3 +66,13 @@
 .topic_img{
 	margin-left: 10px;
 }
+
+.current_topic_node{
+	a{
+		color:#ffffff;
+		&:hover{
+			color: #ffffff;
+			text-decoration: none;
+		}
+	}
+}

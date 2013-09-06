@@ -13,3 +13,52 @@
 	}
 }
 
+.img_username_home_page{
+	border-bottom: 1px solid $grayMediumLight;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+		color: $grayLight;
+		font-size: 14px;
+		font-weight: bold;
+}
+
+.state_box_home_page{
+	padding-top: 5px;
+	padding-bottom: 45px;
+}
+.user_id{
+	color: $grayLight;
+		font-size: 14px;
+		font-weight: normal;
+		margin-top: 13px;
+}
+.state_box{
+	margin-bottom: 5px;
+	padding-bottom: 25px;
+}
+.state{
+	width: 32.3%;
+    float: left;
+    padding: 5px 0;
+    margin: 10px 0;
+    text-align: center;
+    border-right: 1px solid #eeeeee;
+    line-height: 18px;
+    &:last-child{
+			border: 0;
+		}
+}
+.user_imformations{
+	margin-top: 10px;
+	margin-bottom:10px;
+	color: #7f8c8d;
+	a{
+		color: #7f8c8d;
+		&:hover{
+			color:#2c3e50
+		}
+	}
+}
+.user_imformation{
+  margin-bottom: 3px;
+}

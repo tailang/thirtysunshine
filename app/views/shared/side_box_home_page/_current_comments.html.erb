@@ -1,0 +1,13 @@
+<div class="box">
+  <div class="box_header">
+  	最近的评论
+  </div>
+  <% comments.each do |comment| %>
+  <div class="topic_line">
+  	<div id="current_topics_title">
+    话题：<%= link_to comment.commentable.title, topic_path(comment.commentable) %><br>
+    </div>
+  	<%= output_content comment.comment %>
+  </div>
+  <% end -%>
+</div>
