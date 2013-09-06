@@ -17,6 +17,10 @@ class ApplicationController < ActionController::Base
     session[:previous_url] || root_path
   end
   
+  def after_sign_up_path_for(resource)
+    edit_user_path(current_user)
+  end
+
   rescue_from CanCan::AccessDenied do |exception|
     flash[:error] = exception.message
     redirect_to root_path

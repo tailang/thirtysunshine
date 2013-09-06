@@ -6,7 +6,7 @@ Thirtysunshine::Application.routes.draw do
 
   # get "follows/destroy"
 
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "registrations" }
   resources :users 
   resources :notifications
   resources :nodes
