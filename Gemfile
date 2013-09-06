@@ -39,6 +39,4 @@ gem "acts_as_follower"
 gem 'redcarpet'
 gem 'coderay'
 
-#uedit
-gem 'ueditor_rails'
 

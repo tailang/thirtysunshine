@@ -13,14 +13,16 @@
   <div class="controls"><%= f.text_field :title, :style => "width:480px;" %></div>
 </div>
  
- 
+   <div class=field>
       <%= f.label :body, "话题内容" %>
-      <%= f.ueditor_text :body, :height => 500, :width => 670, :toolbars => [['undo', 'redo','|','link','insertimage', '|', 'preview', 'fullscreen']] %>
-      <br>
+      <a href="http://weibotuchuang.sinaapp.com/", target="_blank", class="picture_link label label-info">图片</a>
+      <%= f.text_area :body, :style => "height:500px; width:660px" %>
+   </div><br>
     <div class="action">
       <%= f.submit "发布", :class => "btn btn-primary" %>
-    </div>
-  	<div class="pull-right">
+        <div class="pull-right">
     <a href="#">编辑器语法帮助?</a>
   </div> 
+    </div>
+  
 <% end %>

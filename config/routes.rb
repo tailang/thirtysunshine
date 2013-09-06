@@ -1,7 +1,5 @@
 Thirtysunshine::Application.routes.draw do
   
-  mount UeditorRails::Engine => '/ueditor'
-
   get "notifications/index"
 
   # get "follows/create"

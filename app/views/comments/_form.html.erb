@@ -1,8 +1,12 @@
 <% @comment ||= @topic.comments.build %>
 <%= form_for([@comment.commentable, @comment]) do |f| %>
+<div class="field">
+<div>
   <%= f.label :comment, "添加回应" %>
-  <%= f.ueditor_text :comment, :height => 50, :width => 667, :toolbars => [['undo', 'redo', '|', 'link','insertimage','|' , 'preview']] %>
-<br>
+  <a href="http://weibotuchuang.sinaapp.com/", target="_blank", class="picture_link label label-info">图片</a>
+ </div>
+  <%= f.text_area :comment, :style => "height:100px; width:660px" %>
+</div><br>
 <div class="action">
   <%= f.submit "提交", :class => "btn btn-primary" %>
   <div class="pull-right">

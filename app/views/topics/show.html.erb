@@ -68,6 +68,9 @@ document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static
 </div>
 <% unless @topic.comments.empty?%>
 	<div class="box">
+    <div class="box_header">
+       共有<%= @topic.comments.count %>条回复
+    </div>
     <%= render :partial => 'comments/comment', :locals => { :comments => @comments } %>
   <%= will_paginate @comments, :previous_label => '<前页', :next_label => '后页>' %>
  </div>

@@ -4,14 +4,17 @@
   	<div class="control-label"><%= f.label :name, "节点名" %></div>
   	<div class="controls"><%= f.text_field :name %></div>
   </div>
-
-    <%= f.label :introduction, "节点介绍" %>
-    <%= f.ueditor_text :introduction, :height => 100, :width => 670, :toolbars => [['undo', 'redo']] %>
+    <div class="field">
+          <%= f.label :introduction, "节点介绍" %>
+    <%= f.text_area :introduction, :style => "height:400px; width:660px" %>
+    </div>
     <br>
-    <%= f.submit "发布", :class => "btn btn-primary" %>
+    <div class="action">
+        <%= f.submit "发布", :class => "btn btn-primary" %>
     <div class="pull-right">
     <a href="#">编辑器语法帮助?</a>
   </div>
+    </div>
   </div>
 </div>  
 <% end %>
