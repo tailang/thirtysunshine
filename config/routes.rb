@@ -2,7 +2,13 @@ Thirtysunshine::Application.routes.draw do
 
   devise_for :users, :controllers => { :registrations => "registrations" }
   resources :users
-  resources :notifications
+  
+  resources :notifications, :only => [:index, :destroy] do
+    collection do
+      post :clear
+    end
+  end
+
   resources :nodes
   
   resources :topics do
@@ -14,8 +20,12 @@ Thirtysunshine::Application.routes.draw do
   match 'users/:id/comments' => 'users#comments', :as => :comments_user
   match 'users/:id/follows' => 'users#follows', :as => :follows_user
 
-  get "staticpages/index"
-  get "notifications/index"
+  #match "/index" => "staticpages#index"
+  match "/about" => "staticpages#about"
+  match "/advice" => "staticpages#advice"
+  match "/help" => "staticpages#help"
+  match "/search" => "staticpages#search"
+  match "/thanks" => "staticpages#thanks"
 
   root :to => "topics#index"
 

@@ -8,7 +8,7 @@
     <div class="media-heading">
       <div class="comment_infos">
         <%= link_to comment.user.username, user_path(comment.user), :id => "user_name" %>  
-        发表与<%= time_ago_in_words(comment.created_at) %>
+        <span>发表于<%= time_ago_in_words(comment.created_at) %></span>
         <div class="pull-right">
           <%= link_to raw('<span><i class="icon-remove"></i>删除</span>'),  topic_comment_path(comment.commentable, comment),
                                                                           :method => :delete,

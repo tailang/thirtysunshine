@@ -22,7 +22,11 @@
             </div>
             <div class="media">
               <div class="topic_line_infos">
-                <span><i class="icon-tag"></i><%= link_to topic.node.name, node_path(topic.node) %></span>
+                <span>
+                  <div class="label current_topic_node">
+                  <%= link_to topic.node.name, node_path(topic.node) %>
+                </div>
+                </span>
              <span>本帖由-<%= link_to topic.user.username, user_path(topic.user) %>-于<%= time_ago_in_words(topic.created_at) %>发布</span>
                <div class="pull-right">
                  <span class="label label-info">

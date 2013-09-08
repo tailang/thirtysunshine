@@ -16,7 +16,11 @@
 
           <div class="media">
           <div class="topic_infos_no_title">
-          <span><i class="icon-tag"></i><%= link_to @topic.node.name, node_path(@topic.node) %></span>
+          <span>
+            <div class="label current_topic_node">
+            <%= link_to @topic.node.name, node_path(@topic.node), :id => "fontcolor" %>
+           </div>
+          </span>
           <span>本帖由-<%= link_to @topic.user.username, user_path(@topic.user) %>-于<%= time_ago_in_words(@topic.created_at) %>发布</span>
           </div>
         </div>
@@ -87,7 +91,7 @@ document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static
  </div>
 </div>
 <div class="span3">
-  <%= render 'shared/side_box/topic_show' %>
+  <%= render :partial => 'shared/side_box/topic_show', :locals => {:node => @node} %>  
 </div>
 </div>
 

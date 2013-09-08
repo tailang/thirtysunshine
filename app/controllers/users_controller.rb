@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   skip_load_and_authorize_resource :only => [:topics, :follows, :comments]
   def index
   	#@users = User.all
+    @users = @users.paginate(:page => params[:page], :per_page => 70)
   end
   
   def show
@@ -30,16 +31,16 @@ class UsersController < ApplicationController
 
   def topics
     @user = User.find(params[:id])
-    @topics = @user.topics.paginate(:page => params[:page], :per_page => 1)
+    @topics = @user.topics.paginate(:page => params[:page], :per_page => 20)
   end
 
   def follows
     @user = User.find(params[:id])
-    @follow_topics = @user.follows.paginate(:page => params[:page], :per_page => 1)
+    @topics_follow = @user.follows.paginate(:page => params[:page], :per_page => 15)
   end
 
   def comments
     @user = User.find(params[:id])
-    @comments = @user.comments.paginate(:page => params[:page], :per_page => 1)
+    @comments = @user.comments.paginate(:page => params[:page], :per_page => 15)
   end
 end

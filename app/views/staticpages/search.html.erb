@@ -1,0 +1,27 @@
+<%= provide(:title, "搜索") %>
+<div class="row">
+  <div class="span9">
+    <div class="box">
+      <script>
+  (function() {
+    var cx = '007571709812528908409:fyaa0jut4w0';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+    </div>
+  </div>
+  <div class="span3">
+      <% if user_signed_in? %>
+    <%= render 'shared/user_infos' %>
+<% else %>
+  <%= render 'shared/welcome' %>
+<% end %>
+  </div>
+</div>

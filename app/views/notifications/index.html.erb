@@ -1,4 +1,43 @@
 <%= provide(:title, "消息") %>
-<% @notifications.each do |notification| %>
-  <%= link_to notification.comment.commentable.title, topic_path(notification.comment.commentable) %><br>
+<div class="box">
+  <div class="box_header">
+  	您的全部消息
+  	<div class="pull-right">
+  		<%= link_to "全部删除", clear_notifications_path, :method => :post, :class => "btn btn-mini btn-danger", 'data-disable-with' => '清空中...' %>
+  	</div>
+  </div>
+  <% if @notifications.blank? %>
+  	暂时没有跟您有关的消息
+  	<% else %>
+  	 <% @notifications.each do |notification| %>
+  <div class="topic_line">
+  	<div class="media">
+  	  <div class="pull-left">
+  	  	<%= link_to image_tag(notification.comment.user.avatar_url(:normal), :class => "img-rounded media-object"), user_path(notification.comment.user) %>
+  	  </div>
+  	  <div class="media-body">
+  	  	<div class="media-heading">
+  	  	  <div id="topics_title topic_line_infos">
+  	  	  	<div id="current_topics_title">
+  	  	  	<span class="stats_user_name">
+  	  	  		<%= link_to notification.comment.user.username, user_path(notification.comment.user) %> 提到你, 在话题 <%= link_to notification.comment.commentable.title, topic_path(notification.comment.commentable) %></span>
+  	  	  	<div class="pull-right">
+  	  	      <%= link_to "删除", notification_path(notification), :method => :delete, :class => "label label-important" %>
+  	       </div>
+  	       </div>
+  	  	  </div>
+  	  	</div>
+
+  	  	<div class="media">
+  	  		<%= output_content notification.comment.comment %>
+  	  	</div>
+  	  </div>
+  	</div>
+  </div>
 <% end %>
+<%= will_paginate @notifications, :previous_label => '<前页', :next_label => '后页>' %>
+  <% end %>
+ 
+</div>
+
+ 

@@ -69,8 +69,17 @@
   </li>
 </ul>
   	</div>
-     <%= render :partial => "shared/side_box_home_page/current_topics", :locals => {:topics => @topics} %>
-     <%= render :partial => "shared/side_box_home_page/current_comments", :locals => {:comments => @comments} %>
+    <div class="box">
+       <div class="box_header">最近发表的话题</div>
+       <%= render :partial => "shared/side_box_home_page/current_topics", :locals => {:topics => @topics} %>
+    </div>
+
+    <div class="box">
+      <div class="box_header">
+        最近的评论
+      </div>
+        <%= render :partial => "shared/side_box_home_page/current_comments", :locals => {:comments => @comments} %>
+    </div>
   </div>
 <div class="span3">
 <%= render :partial => "shared/side_box_home_page/states", :locals => {:user => @user} %>
