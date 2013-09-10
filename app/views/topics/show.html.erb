@@ -70,17 +70,21 @@ document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static
     </div>
 
 </div>
-<% unless @topic.comments.empty?%>
+
 	<div class="box">
     <div class="box_header">
+      <% if @topic.comments.empty?%>
+       该话题暂无回复      
+      <% else %>
        共有<%= @topic.comments.count %>条回复
+      <% end %>
     </div>
     <div id="comments">
     <%= render @comments %>
     </div>
   <%= will_paginate @comments, :previous_label => '<前页', :next_label => '后页>' %>
  </div>
-<% end %>
+
 
   <%= render 'topics/comment_box' %>
 </div>

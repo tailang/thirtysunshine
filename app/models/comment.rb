@@ -9,7 +9,7 @@ class Comment < ActiveRecord::Base
   #acts_as_voteable
 
   # NOTE: Comments belong to a user
-  has_many :notifications
+  has_many :notifications, :dependent => :destroy
   belongs_to :commentable, :polymorphic => true, :touch => true
   belongs_to :user
 

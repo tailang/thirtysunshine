@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
 
   has_many :topics
   has_many :comments
-  has_many :notifications
+  has_many :notifications, :dependent => :destroy
   acts_as_follower
   
   validates :username, :presence => true, :uniqueness => true, :length => {:maximum => 12}

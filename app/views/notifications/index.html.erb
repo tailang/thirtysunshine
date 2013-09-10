@@ -10,6 +10,7 @@
   	暂时没有跟您有关的消息
   	<% else %>
   	 <% @notifications.each do |notification| %>
+     <% unless notification.comment.blank?  %>
   <div class="topic_line">
   	<div class="media">
   	  <div class="pull-left">
@@ -34,6 +35,7 @@
   	  </div>
   	</div>
   </div>
+<% end %>
 <% end %>
 <%= will_paginate @notifications, :previous_label => '<前页', :next_label => '后页>' %>
   <% end %>
