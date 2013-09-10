@@ -76,7 +76,7 @@ document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static
       <% if @topic.comments.empty?%>
        该话题暂无回复      
       <% else %>
-       共有<%= @topic.comments.count %>条回复
+        <div id="topic_comments_count">共有<%= @topic.comments.count %>条回复</div>
       <% end %>
     </div>
     <div id="comments">

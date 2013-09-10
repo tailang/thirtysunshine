@@ -1,2 +1,4 @@
 $('<%= escape_javascript(render :partial => 'comments/comment', :locals => { :comment => @comment }) %>').appendTo('#comments').hide().fadeIn();
 $('#new_comment textarea').val('');
+$('#topic_comments_count').html('共有<%= @comment.commentable.comments.count %>条回复')
+$('#user_state_comments_count').html('<%= current_user.comments.count %><br>回复')
