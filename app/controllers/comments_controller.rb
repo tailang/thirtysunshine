@@ -24,8 +24,10 @@ class CommentsController < ApplicationController
   def destroy
     #@comment = commentable_record.comments.find(params[:id])    
     @comment.destroy
-    redirect_to commentable_record
-    flash[:success] = '成功删除评论'
+    respond_to do |format|
+    format.html{redirect_to commentable_record}
+    format.js
+    end
   end
   
   def update
