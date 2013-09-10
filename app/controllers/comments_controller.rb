@@ -5,13 +5,15 @@ class CommentsController < ApplicationController
   def create
   	@comment = commentable_record.comments.create(params[:comment])
   	@comment.user = current_user 
+    respond_to do |format|
   	if @comment.save
-  	  redirect_to commentable_record
-  	  #flash[:success] = "成功创建评论"
+  	  format.html{ redirect_to commentable_record }
+  	  format.js
   	else
-  	  redirect_to commentable_record
-  	  flash[:error] = "创建评论失败"
+  	  format.html{ redirect_to commentable_record}
+  	  format.js
   	end
+    end
   end
 
   # def edit

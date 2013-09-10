@@ -75,20 +75,14 @@ document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static
     <div class="box_header">
        共有<%= @topic.comments.count %>条回复
     </div>
-    <%= render :partial => 'comments/comment', :locals => { :comments => @comments } %>
+    <div id="comments">
+    <%= render @comments %>
+    </div>
   <%= will_paginate @comments, :previous_label => '<前页', :next_label => '后页>' %>
  </div>
 <% end %>
 
- <div class="box">
-  <% if user_signed_in? %>
-    <%= render "comments/form" %>
-  <% else %>
-    登录后可以添加评论哦!
-    <%= link_to "登录", new_user_session_path, :class => "btn" %>
-    <%= link_to "注册", new_user_registration_path, :class => "btn btn-success" %>
-  <% end %>
- </div>
+  <%= render 'topics/comment_box' %>
 </div>
 <div class="span3">
   <%= render :partial => 'shared/side_box/topic_show', :locals => {:node => @node} %>  

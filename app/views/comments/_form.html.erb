@@ -1,5 +1,6 @@
 <% @comment ||= @topic.comments.build %>
-<%= form_for([@comment.commentable, @comment]) do |f| %>
+<div id="new_comment">
+<%= form_for([@comment.commentable, @comment], :remote => true) do |f| %>
 <div class="field">
 <div>
   <%= f.label :comment, "添加回应" %>
@@ -15,3 +16,4 @@
 </div> 
 
 <% end %>
+</div>
