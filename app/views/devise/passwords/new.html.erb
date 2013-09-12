@@ -2,22 +2,22 @@
 <div class="row">
   <div class="span9">
     <div class="box">
-     <span class="box_header">找回密码</span>
-     <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }, :html => {:class => "form-horizontal"}) do |f| %>
-     <%= render 'shared/error_messages', object: f.object %>
-     <div class="control-group">
-       <div class="control-label"><%= f.label :email, "邮箱" %></div>
-       <div class="controls"><%= f.email_field :email, :autofocus => true %>
-       <p>输入您的注册邮箱，我们将发送一链接到您的邮箱，通过该链接你可以重新设置密码</p>
-       </div>
-     </div>
-  
-     <div class="control-group">
-	   <div class="controls">
-	   	<%= f.submit "找回密码", :class => "btn btn-success" %>
-       </div>     	
-     </div>
-     <% end %>
+      <span class="box_header">找回密码</span>
+      <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }, :html => {:class => "form-horizontal"}) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <div class="control-group">
+        <div class="control-label"><%= f.label :email, "邮箱" %></div>
+        <div class="controls"><%= f.email_field :email, :autofocus => true %>
+          <p>输入您的注册邮箱，我们将发送一链接到您的邮箱，通过该链接你可以重新设置密码</p>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <div class="controls">
+          <%= f.submit "找回密码", :class => "btn btn-success" %>
+        </div>     	
+      </div>
+      <% end %>
     </div>
   </div>
 </div>

@@ -6,92 +6,92 @@
         <div class="pull-right">
           <%= link_to image_tag(@topic.user.avatar_url(:normal), :class => "img-rounded media-object"), user_path(@topic.user) %>
         </div>
-      <div class="topic_infos">
-        <div class="media-body">
-          <div class="media-heading">
-            <div class="topic_title break_word">
-              <%= @topic.title %>
-            </div>           
-          </div>
+        <div class="topic_infos">
+          <div class="media-body">
+            <div class="media-heading">
+              <div class="topic_title break_word">
+                <%= @topic.title %>
+              </div>           
+            </div>
 
-          <div class="media">
-          <div class="topic_infos_no_title">
-          <span>
-            <div class="label current_topic_node">
-            <%= link_to @topic.node.name, node_path(@topic.node), :id => "fontcolor" %>
-           </div>
-          </span>
-          <span>本帖由-<%= link_to @topic.user.username, user_path(@topic.user) %>-于<%= time_ago_in_words(@topic.created_at) %>发布</span>
+            <div class="media">
+              <div class="topic_infos_no_title">
+                <span>
+                  <div class="label current_topic_node">
+                    <%= link_to @topic.node.name, node_path(@topic.node), :id => "fontcolor" %>
+                  </div>
+                </span>
+                <span>本帖由-<%= link_to @topic.user.username, user_path(@topic.user) %>-于<%= time_ago_in_words(@topic.created_at) %>发布</span>
+              </div>
+            </div>
+
           </div>
         </div>
+      </div>
 
+      <div class="content_doc">
+        <%= output_content @topic.body %>
+      </div>
+      
+      
+      
+      <div class="topic_bottom_infos">
+
+        <!-- Baidu Button BEGIN -->
+        <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
+          <a class="bds_tsina"></a>
+          <a class="bds_douban"></a>
+          <a class="bds_qzone"></a>
+          <a class="bds_renren"></a>
+          <span class="bds_more">更多</span>
         </div>
-      </div>
-      </div>
+        <script type="text/javascript" id="bdshare_js" data="type=tools&amp;mini=1&amp;uid=6808982" ></script>
+        <script type="text/javascript" id="bdshell_js"></script>
+        <script type="text/javascript">
+        document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+        </script>
+        <!-- Baidu Button END -->
 
-  <div class="content_doc">
-    <%= output_content @topic.body %>
-  </div>
-  
-  
-  
-  	<div class="topic_bottom_infos">
-
-<!-- Baidu Button BEGIN -->
-<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
-<a class="bds_tsina"></a>
-<a class="bds_douban"></a>
-<a class="bds_qzone"></a>
-<a class="bds_renren"></a>
-<span class="bds_more">更多</span>
-</div>
-<script type="text/javascript" id="bdshare_js" data="type=tools&amp;mini=1&amp;uid=6808982" ></script>
-<script type="text/javascript" id="bdshell_js"></script>
-<script type="text/javascript">
-document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
-</script>
-<!-- Baidu Button END -->
-
-  	  <div class="pull-right">
-  	   <%= link_to raw('<span><i class="icon-pencil"></i>修改</span>'), edit_topic_path(@topic) if can? :update, @topic %>
-  	   <%= link_to raw('<span><i class="icon-remove"></i>删除</span>'), topic_path(@topic),
-                                                                       :method => :delete,
-                                                                       :confirm => "确定删除吗？" if can? :destroy, @topic %>
-        <% if user_signed_in? %>
+        <div class="pull-right">
+          <%= link_to raw('<span><i class="icon-pencil"></i>修改</span>'), edit_topic_path(@topic) if can? :update, @topic %>
+          <%= link_to raw('<span><i class="icon-remove"></i>删除</span>'), topic_path(@topic),
+          :method => :delete,
+          :confirm => "确定删除吗？" if can? :destroy, @topic %>
+          <% if user_signed_in? %>
           <% if current_user.following?(@topic) %>
-            <%= link_to raw('<span><i class="icon-star"></i>取消收藏</span>'), [@topic, :follow], :method => :delete %>
-            <% else %>
-            <%= link_to raw('<span><i class="icon-star-empty"></i>收藏</span>'), [@topic, :follow], :method => :post %>
+          <%= link_to raw('<span><i class="icon-star"></i>取消收藏</span>'), [@topic, :follow], :method => :delete %>
+          <% else %>
+          <%= link_to raw('<span><i class="icon-star-empty"></i>收藏</span>'), [@topic, :follow], :method => :post %>
           <% end %>
-        <% end %>
-  	   
-  	   
+          <% end %>
+          
+          
+        </div>
       </div>
+
     </div>
 
-</div>
-
-	<div class="box">
-    <div class="box_header">
-      <div id="topic_comments_count">
-      <% if @topic.comments.empty?%>
-       该话题暂无回复      
-      <% else %>
-        共有<%= @topic.comments.count %>条回复
-      <% end %>
+    <div class="box">
+      <div class="box_header">
+        <div id="topic_comments_count">
+          <% if @topic.comments.empty?%>
+          该话题暂无回复      
+          <% else %>
+          共有<%= @topic.comments.count %>条回复
+          <% end %>
+        </div>
       </div>
+      <div id="comments">
+        <%= render @comments %>
+      </div>
+      <%= will_paginate @comments, :previous_label => '<前页', :next_label => '后页>' %>
     </div>
-    <div id="comments">
-    <%= render @comments %>
-    </div>
-  <%= will_paginate @comments, :previous_label => '<前页', :next_label => '后页>' %>
- </div>
 
 
-  <%= render 'topics/comment_box' %>
-</div>
-<div class="span3">
-  <%= render :partial => 'shared/side_box/topic_show', :locals => {:node => @node, :current_topic => @topic} %>  
-</div>
+    <%= render 'topics/comment_box' %>
+  </div>
+  <div class="span3">
+    <%= render :partial => 'shared/side_box/topic_show', :locals => {:node => @node, :current_topic => @topic} %>  
+  </div>
 </div>
 

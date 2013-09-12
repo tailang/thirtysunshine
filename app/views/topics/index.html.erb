@@ -2,54 +2,54 @@
 <div class="row">
   <div class="span9">
     <div class="box">
-        <div id="node_info">
-          <% @nodes.each do |node| %>
-            <%= link_to node.name, node %>         
-          <% end -%>
-        </div>
-        
-        <% @topics.each do |topic| %>
-        <div class="topic_line">
+      <div id="node_info">
+        <% @nodes.each do |node| %>
+        <%= link_to node.name, node %>         
+        <% end -%>
+      </div>
+      
+      <% @topics.each do |topic| %>
+      <div class="topic_line">
         <div class="media">
           <div class="pull-left">
            <%= link_to image_tag(topic.user.avatar_url(:normal), :class => "img-rounded media-object"), user_path(topic.user) %>
-          </div>
-          <div class="media-body">
-            <div class="media-heading">
-              <div id="topics_title">
+         </div>
+         <div class="media-body">
+          <div class="media-heading">
+            <div id="topics_title">
               <%= link_to topic.title, topic_path(topic) %>
-              </div>
             </div>
-            <div class="media">
-              <div class="topic_line_infos">
-                <span>
-                  <div class="label current_topic_node">
+          </div>
+          <div class="media">
+            <div class="topic_line_infos">
+              <span>
+                <div class="label current_topic_node">
                   <%= link_to topic.node.name, node_path(topic.node) %>
                 </div>
-                </span>
-             <span>本帖由-<%= link_to topic.user.username, user_path(topic.user) %>-于<%= time_ago_in_words(topic.created_at) %>发布</span>
-               <div class="pull-right">
-                 <span class="label label-info">
-                  <% topic_count = topic.comments.count %>
-                  <% if topic_count > 0 %>
-                    <%= topic_count %>
-                  <% else %>
-                    抢沙发啦!
-                  <% end %>
-                </span>
-               </div>
-              </div>
+              </span>
+              <span>本帖由-<%= link_to topic.user.username, user_path(topic.user) %>-于<%= time_ago_in_words(topic.created_at) %>发布</span>
+              <div class="pull-right">
+               <span class="label label-info">
+                <% topic_count = topic.comments.count %>
+                <% if topic_count > 0 %>
+                <%= topic_count %>
+                <% else %>
+                抢沙发啦!
+                <% end %>
+              </span>
             </div>
           </div>
         </div>
       </div>
-        <% end -%>
-     <%= will_paginate @topics, :previous_label => '<前页', :next_label => '后页>' %> 
-      </div>
-      </div>
-      <div class="span3">
-        <%= render 'shared/side_box/topic_index' %>
-      </div>
+    </div>
   </div>
+  <% end -%>
+  <%= will_paginate @topics, :previous_label => '<前页', :next_label => '后页>' %> 
+</div>
+</div>
+<div class="span3">
+  <%= render 'shared/side_box/topic_index' %>
+</div>
+</div>
 
 

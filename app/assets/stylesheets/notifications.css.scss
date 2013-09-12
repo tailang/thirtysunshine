@@ -1,13 +1,10 @@
-// Place all the styles related to the notifications controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 .head-action{
-	margin-top: 10px;
+  margin-top: 10px;
 	a{
+	  color: #fff;
+	  &:hover{
 		color: #fff;
-		&:hover{
-			color: #fff;
-			text-decoration: none;
-		}
+		text-decoration: none;
+	  }
 	}
 }

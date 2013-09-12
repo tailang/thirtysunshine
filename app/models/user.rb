@@ -36,6 +36,7 @@ class User < ActiveRecord::Base
   end
 
   private
+
     def username_cannot_contain_invalid_characters
         if self.username.present? and (self.username.include?('@') or
                                      self.username.include?('-') or
@@ -47,4 +48,5 @@ class User < ActiveRecord::Base
         errors.add(:username, "不能包含@, 横线, 斜线, 句点或空格")
       end
     end
+    
 end

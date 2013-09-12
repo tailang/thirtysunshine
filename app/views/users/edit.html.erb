@@ -4,120 +4,120 @@
     <%= form_for(@user, :html => {:class => "form-horizontal"}) do |f| %>
     <div class="box">
       <span class="box_header">帐号设置</span>
-  <%= render 'shared/error_messages', object: f.object %>
-  <div class="control-group">
-    <div class="control-label">修改头像</div>
-    <div class="controls">
-    <%= image_tag(@user.avatar_url(:big), :class => "img-rounded") %>
-    <%= image_tag(@user.avatar_url(:large), :class => "img-rounded") %>
-    <%= image_tag(@user.avatar_url(:normal), :class => "img-rounded") %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <div class="control-group">
+        <div class="control-label">修改头像</div>
+        <div class="controls">
+          <%= image_tag(@user.avatar_url(:big), :class => "img-rounded") %>
+          <%= image_tag(@user.avatar_url(:large), :class => "img-rounded") %>
+          <%= image_tag(@user.avatar_url(:normal), :class => "img-rounded") %>
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <%= f.file_field :avatar, :class => "btn" %>
+          <%= f.hidden_field :avatar_cache %>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="control-group">
-    <div class="controls">
-      <%= f.file_field :avatar, :class => "btn" %>
-    <%= f.hidden_field :avatar_cache %>
+
+    <div class="box">
+      <div class="control-group">
+        <div class="control-label"><%= f.label :username, "用户名" %></div>
+        <div class="controls"><%= f.text_field :username, :disabled => true, :style => "width:290px" %></div>
+      </div>
+
+      <div class="control-group">
+        <div class="control-label"><%= f.label :email, "邮箱" %></div>
+        <div class="controls"><%= f.text_field :email, :disabled => true, :style => "width:290px" %></div>
+      </div>
+      
+      <div class="control-group">
+        <div class="controls">
+          <span>性别默认为男生哦！</span>
+          <label class="radio">
+            <div id="optionsRadios1"><%= radio_button_tag 'user[gender]', '0' %></div>
+            <%= f.label :gender, "男" %>
+          </label>
+          <label class="radio">
+            <div id="optionsRadios2"><%= radio_button_tag 'user[gender]', '1' %></div>
+            <%= f.label :gender, "女" %>
+          </label>
+        </div>
+      </div>
+      
+      <div class="control-group">
+        <div class="control-label"><%= f.label :school, "学校" %></div>
+        <div class="controls">
+          <%= f.text_field :school, :style => "width:290px" %></div>
+        </div>
+
+        <div class="control-group">
+          <div class="controls">
+            <span>请用中文填写你常居的省市,如“省”填“浙江”，“市”填“嘉兴”</span>
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="control-label"><%= f.label :province, "省" %></div>
+          <div class="controls">
+            <%= f.text_field :province, :style => "width:290px" %>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <div class="control-label"><%= f.label :city, "市" %></div>
+          <div class="controls">
+            <%= f.text_field :city, :style => "width:290px" %>
+          </div>
+        </div>
+        
+
+        <div class="control-group">
+         <div class="controls">
+          <span>填写下列网址时，勿忘http://哦,例http://blog.caoping1990.cn/</span>
+        </div>
+      </div>
+
+      <div class="control-group">
+       <div class="controls">
+        <span>正确填写你的豆瓣主页地址，在你的个人主页中可以显示豆瓣show哦！</span>
+      </div>
     </div>
-  </div>
-  </div>
-
-  <div class="box">
-  <div class="control-group">
-    <div class="control-label"><%= f.label :username, "用户名" %></div>
-    <div class="controls"><%= f.text_field :username, :disabled => true, :style => "width:290px" %></div>
-  </div>
-
-   <div class="control-group">
-    <div class="control-label"><%= f.label :email, "邮箱" %></div>
-    <div class="controls"><%= f.text_field :email, :disabled => true, :style => "width:290px" %></div>
-  </div>
-  
-  <div class="control-group">
-    <div class="controls">
-      <span>性别默认为男生哦！</span>
-      <label class="radio">
-    <div id="optionsRadios1"><%= radio_button_tag 'user[gender]', '0' %></div>
-    <%= f.label :gender, "男" %>
-  </label>
-  <label class="radio">
-    <div id="optionsRadios2"><%= radio_button_tag 'user[gender]', '1' %></div>
-     <%= f.label :gender, "女" %>
- </label>
+    <div class="control-group">
+      <div class="control-label"><%= f.label :douban, "豆瓣" %></div>
+      <div class="controls">
+        <%= f.text_field :douban, :style => "width:290px" %>
+      </div>
     </div>
-  </div>
-  
-  <div class="control-group">
-    <div class="control-label"><%= f.label :school, "学校" %></div>
-    <div class="controls">
-      <%= f.text_field :school, :style => "width:290px" %></div>
-  </div>
 
-  <div class="control-group">
-    <div class="controls">
-      <span>请用中文填写你常居的省市,如“省”填“浙江”，“市”填“嘉兴”</span>
+
+    <div class="control-group">
+      <div class="control-label"><%= f.label :sinaweibo, "微博" %></div>
+      <div class="controls"><%= f.text_field :sinaweibo, :style => "width:290px" %></div>
     </div>
-  </div>
-  <div class="control-group">
-    <div class="control-label"><%= f.label :province, "省" %></div>
-    <div class="controls">
-      <%= f.text_field :province, :style => "width:290px" %>
+
+    <div class="control-group">
+      <div class="control-label"><%= f.label :site, "个人博客" %></div>
+      <div class="controls"><%= f.text_field :site, :style => "width:290px" %></div>
     </div>
-  </div>
-
-  <div class="control-group">
-    <div class="control-label"><%= f.label :city, "市" %></div>
-    <div class="controls">
-      <%= f.text_field :city, :style => "width:290px" %>
+    
+    <div class="control-group">
+      <div class="control-label">
+        <%= f.label :description, "个人简介" %>
+        <div class="controls">
+          <%= f.text_area :description, :style => "width:290px; height:200px"  %>
+        </div>
+      </div>
     </div>
-  </div>
-  
-
- <div class="control-group">
-   <div class="controls">
-    <span>填写下列网址时，勿忘http://哦,例http://blog.caoping1990.cn/</span>
-   </div>
- </div>
-
- <div class="control-group">
-   <div class="controls">
-    <span>正确填写你的豆瓣主页地址，在你的个人主页中可以显示豆瓣show哦！</span>
-   </div>
- </div>
-  <div class="control-group">
-    <div class="control-label"><%= f.label :douban, "豆瓣" %></div>
-    <div class="controls">
-      <%= f.text_field :douban, :style => "width:290px" %>
-    </div>
-  </div>
-
-
-  <div class="control-group">
-    <div class="control-label"><%= f.label :sinaweibo, "微博" %></div>
-    <div class="controls"><%= f.text_field :sinaweibo, :style => "width:290px" %></div>
-  </div>
-
-  <div class="control-group">
-    <div class="control-label"><%= f.label :site, "个人博客" %></div>
-    <div class="controls"><%= f.text_field :site, :style => "width:290px" %></div>
-  </div>
-  
-  <div class="control-group">
-    <div class="control-label">
-      <%= f.label :description, "个人简介" %>
-    <div class="controls">
-      <%= f.text_area :description, :style => "width:290px; height:200px"  %>
-    </div>
-    </div>
-  </div>
 
   </div>
   <div class="box">
     <div class="actions">
-    <%= f.submit "保存设置", :class => "btn btn-success" %>
-    <div class="pull-right">
-      <%= link_to "修改密码", edit_registration_path(@user), :class => "btn" %>
+      <%= f.submit "保存设置", :class => "btn btn-success" %>
+      <div class="pull-right">
+        <%= link_to "修改密码", edit_registration_path(@user), :class => "btn" %>
+      </div>
     </div>
-  </div>
   </div>
   <% end -%>
 </div>

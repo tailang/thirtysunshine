@@ -1,12 +1,12 @@
 <% if user_signed_in? %>
-  	<%= render 'shared/user_infos' %>
+<%= render 'shared/user_infos' %>
 <% else %>
-  <%= render 'shared/welcome' %>
+<%= render 'shared/welcome' %>
 <% end %>
 
 <div class="box">
   <div class="box_header">
-  	<div class="label current_topic_node"><%= node.name %></div> 标签简介
+	<div class="label current_topic_node"><%= node.name %></div> 标签简介
   </div>
   <%= node.introduction %>
 </div>

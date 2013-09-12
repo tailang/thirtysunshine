@@ -6,13 +6,13 @@ class CommentsController < ApplicationController
   	@comment = commentable_record.comments.create(params[:comment])
   	@comment.user = current_user 
     respond_to do |format|
-  	if @comment.save
-  	  format.html{ redirect_to commentable_record }
-  	  format.js
-  	else
-  	  format.html{ redirect_to commentable_record}
-  	  format.js
-  	end
+      if @comment.save
+        format.html{ redirect_to commentable_record }
+        format.js
+      else
+        format.html{ redirect_to commentable_record}
+        format.js
+      end
     end
   end
 
@@ -25,8 +25,8 @@ class CommentsController < ApplicationController
     #@comment = commentable_record.comments.find(params[:id])    
     @comment.destroy
     respond_to do |format|
-    format.html{redirect_to commentable_record}
-    format.js
+      format.html{redirect_to commentable_record}
+      format.js
     end
   end
   

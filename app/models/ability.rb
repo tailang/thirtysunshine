@@ -12,7 +12,7 @@ class Ability
       can :create, Topic
       can [:update, :destroy], Topic do |topic|
          topic.user_id == user.id
-     end
+      end
 
       can :create, Comment
       can [:destroy], Comment do |comment|
@@ -26,4 +26,5 @@ class Ability
        can :read, :all 
     end
   end
+  
 end

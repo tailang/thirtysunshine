@@ -1,49 +1,47 @@
-// Place all the styles related to the comments controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 @import "globals/variables.css.scss";
+
 .comment_line{
-	border-bottom: 1px solid $grayMediumLight;
-	padding-bottom: 0px;
-	margin-bottom: 10px;
+  border-bottom: 1px solid $grayMediumLight;
+  padding-bottom: 0px;
+  margin-bottom: 10px;
 }
 
 .word_break{
-	word-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .comment_infos{
-	font-size: 12px;
-	border-bottom: 1px dotted $grayMediumLight;
-	padding-bottom: 5px;
+  font-size: 12px;
+  border-bottom: 1px dotted $grayMediumLight;
+  padding-bottom: 5px;
 	#user_name{
-		color: #888;
-        text-decoration: none;
-        font-weight: bold;
-        margin-right: 8px;
-        &:hover{
-        	color: #555;
-        }
+	  color: #888;
+	  text-decoration: none;
+	  font-weight: bold;
+	  margin-right: 8px;
+	  &:hover{
+		color: #555;
+	  }
 	}
 	
 }
 .picture_link{
-	float: right;
-	margin-top: -23px;
-	margin-right: 7px;
-	margin-bottom: 10px;
+  float: right;
+  margin-top: -23px;
+  margin-right: 7px;
+  margin-bottom: 10px;
 }
 
 #current_topics_title{
-	border-bottom: 1px dotted $grayMediumLight;
-	padding-bottom: 3px;
-	margin-bottom: 10px;
+  border-bottom: 1px dotted $grayMediumLight;
+  padding-bottom: 3px;
+  margin-bottom: 10px;
 
-	font-size: 14px;
-	white-space: nowrap;
-    width: 100%;                  /* IE6 需要定义宽度 */
-    overflow: hidden;             
- 
-    -o-text-overflow: ellipsis;    /* Opera */
-    text-overflow:    ellipsis;    /* IE, Safari (WebKit) */
+  font-size: 14px;
+  white-space: nowrap;
+  width: 100%;                  /* IE6 需要定义宽度 */
+  overflow: hidden;             
+
+  -o-text-overflow: ellipsis;    /* Opera */
+  text-overflow:    ellipsis;    /* IE, Safari (WebKit) */
 }

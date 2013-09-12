@@ -2,15 +2,15 @@
 module ApplicationHelper
   def full_title(page_title)
     base_title = "30度阳光"
-	if page_title.empty?
-	  base_title
-	else
-	  "#{base_title} | #{page_title}"
-	end
+    if page_title.empty?
+     base_title
+    else
+     "#{base_title} | #{page_title}"
+    end
   end
-  
-#markdown支持  
-   def markdown(text)
+
+   #markdown支持  
+  def markdown(text)
     options = {   
       :autolink => true, 
       :fenced_code_blocks => true,
@@ -53,8 +53,8 @@ module ApplicationHelper
       else
         "@#{$1}"
       end
+    end
   end
-end
 
   def output_content(text)
     return "" if text.nil? or text.blank?

@@ -1,19 +1,18 @@
 <% @comment ||= @topic.comments.build %>
 <div id="new_comment">
-<%= form_for([@comment.commentable, @comment], :remote => true) do |f| %>
-<div class="field">
-<div>
-  <%= f.label :comment, "添加回应" %>
-  <a href="http://weibotuchuang.sinaapp.com/", target="_blank", class="picture_link label label-info">图片</a>
- </div>
-  <%= f.text_area :comment, :style => "height:100px; width:660px" %>
-</div><br>
-<div class="action">
-  <%= f.submit "提交", :class => "btn btn-primary" %>
-  <div class="pull-right">
-    <a href="/help", target="_blank">编辑器语法帮助/如何上传图片?</a>
-  </div>
-</div> 
-
-<% end %>
+  <%= form_for([@comment.commentable, @comment], :remote => true) do |f| %>
+  <div class="field">
+	<div>
+	  <%= f.label :comment, "添加回应" %>
+	  <a href="http://weibotuchuang.sinaapp.com/", target="_blank", class="picture_link label label-info">图片</a>
+	</div>
+	<%= f.text_area :comment, :style => "height:100px; width:660px" %>
+   </div><br>
+   <div class="action">
+	 <%= f.submit "提交", :class => "btn btn-primary" %>
+	 <div class="pull-right">
+	   <a href="/help", target="_blank">编辑器语法帮助/如何上传图片?</a>
+	  </div>
+   </div> 
+  <% end %>
 </div>

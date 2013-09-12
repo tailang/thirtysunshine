@@ -43,4 +43,5 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @comments = @user.comments.paginate(:page => params[:page], :per_page => 15)
   end
+  
 end

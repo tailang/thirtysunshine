@@ -18,16 +18,17 @@ class NodesController < ApplicationController
   def create
   	@node = Node.new(params[:node])
   	if @node.save
-  	  redirect_to nodes_path
-  	else
-  	  render :action => new
+      redirect_to nodes_path
+    else
+      render :action => new
       flash[:success] = "创建节点失败"
-  	end
+    end
   end
 
-  
+
   def destroy
     @node.destroy
     redirect_to nodes_path
   end
+
 end

@@ -1,28 +1,28 @@
 <div class="reply">
-<div id="<%= dom_id comment %>">
-<div class="comment_line">
-<div class="media">
-  <div class="pull-left">
-    <%= link_to image_tag(comment.user.avatar_url(:normal),:class => "img-rounded media-object"), user_path(comment.user) %>
-  </div>
-  <div class="media-body">
-    <div class="media-heading">
-      <div class="comment_infos">
-        <%= link_to comment.user.username, user_path(comment.user), :id => "user_name" %>  
-        <span>发表于<%= time_ago_in_words(comment.created_at) %></span>
-        <div class="pull-right">
-          <%= link_to raw('<span>删除</span>'),  topic_comment_path(comment.commentable, comment), :method => :delete, :remote => true, :confirm => "确定删除该评论?" if can? :destroy, comment%>
-          <%= link_to raw('<span>回复</span>'), '#new_comment', :class => 'at', 'data-user-name' => comment.user.username if user_signed_in? %>
+  <div id="<%= dom_id comment %>">
+    <div class="comment_line">
+      <div class="media">
+        <div class="pull-left">
+          <%= link_to image_tag(comment.user.avatar_url(:normal),:class => "img-rounded media-object"), user_path(comment.user) %>
+        </div>
+        <div class="media-body">
+          <div class="media-heading">
+            <div class="comment_infos">
+              <%= link_to comment.user.username, user_path(comment.user), :id => "user_name" %>  
+              <span>发表于<%= time_ago_in_words(comment.created_at) %></span>
+              <div class="pull-right">
+                <%= link_to raw('<span>删除</span>'),  topic_comment_path(comment.commentable, comment), :method => :delete, :remote => true, :confirm => "确定删除该评论?" if can? :destroy, comment%>
+                <%= link_to raw('<span>回复</span>'), '#new_comment', :class => 'at', 'data-user-name' => comment.user.username if user_signed_in? %>
+              </div>
+            </div>
+          </div>
+          <div class="media">
+            <div class="content_doc">
+              <%= output_content comment.comment %>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="media">
-      <div class="content_doc">
-        <%= output_content comment.comment %>
-      </div>
-    </div>
   </div>
-</div>
-</div>
-</div>
 </div>

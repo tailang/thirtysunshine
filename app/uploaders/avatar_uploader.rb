@@ -21,9 +21,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
     "avatar/#{version_name}.png"
   end
 
-  
-
- version :normal do
+  version :normal do
     process :resize_to_fill => [48, 48]
   end
 
@@ -42,7 +40,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # For images you might use something like this:
   def extension_white_list
     %w(jpg jpeg gif png)
-   end
+  end
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
@@ -54,4 +52,5 @@ class AvatarUploader < CarrierWave::Uploader::Base
       "avatar/#{model.id}.#{file.extension.downcase}"
     end
   end
+  
 end

@@ -1,9 +1,9 @@
- <div class="box">
+<div class="box">
   <% if user_signed_in? %>
-    <%= render "comments/form" %>
+	<%= render "comments/form" %>
   <% else %>
-    登录后可以添加评论哦!
-    <%= link_to "登录", new_user_session_path, :class => "btn" %>
-    <%= link_to "注册", new_user_registration_path, :class => "btn btn-success" %>
+	登录后可以添加评论哦!
+	<%= link_to "登录", new_user_session_path, :class => "btn" %>
+	<%= link_to "注册", new_user_registration_path, :class => "btn btn-success" %>
   <% end %>
- </div>
+</div>

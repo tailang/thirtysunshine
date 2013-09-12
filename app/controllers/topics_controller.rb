@@ -10,8 +10,8 @@ class TopicsController < ApplicationController
 
   def show
   	#@topic = Topic.find(params[:id])
-     @comments = @topic.comments.paginate(:page => params[:page], :per_page => 20)
-     @node = @topic.node 
+    @comments = @topic.comments.paginate(:page => params[:page], :per_page => 20)
+    @node = @topic.node 
   end
 
   def new

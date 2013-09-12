@@ -1,82 +1,85 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 @import "globals/variables.css.scss";
+
 .img_username{
-	border-bottom: 1px solid $grayMediumLight;
-	padding-bottom: 5px;
-	margin-bottom: 5px;
-	a {
-		color: $grayLight;
-		font-size: 14px;
-		font-weight: bold;
-	}
+  border-bottom: 1px solid $grayMediumLight;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  a {
+	color: $grayLight;
+	font-size: 14px;
+	font-weight: bold;
+  }
 }
 
 .img_username_home_page{
-	border-bottom: 1px solid $grayMediumLight;
-	padding-bottom: 5px;
-	margin-bottom: 5px;
-		color: $grayLight;
-		font-size: 14px;
-		font-weight: bold;
+  border-bottom: 1px solid $grayMediumLight;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  color: $grayLight;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 .state_box_home_page{
-	//padding-top: 5px;
-	padding-bottom: 45px;
-	margin-bottom: 15px;
+  padding-bottom: 45px;
+  margin-bottom: 15px;
 }
+
 .user_id{
-	color: $grayLight;
-		font-size: 14px;
-		font-weight: normal;
-		margin-top: 13px;
+  color: $grayLight;
+  font-size: 14px;
+  font-weight: normal;
+  margin-top: 13px;
 }
+
 .state_box{
-	margin-bottom: 5px;
-	padding-bottom: 25px;
+  margin-bottom: 5px;
+  padding-bottom: 25px;
 }
+
 .state{
-	width: 32.3%;
-    float: left;
-    padding: 5px 0;
-    margin: 10px 0;
-    text-align: center;
-    border-right: 1px solid #eeeeee;
-    line-height: 18px;
-    a{
-    	color: #2c3e50;
-    	&:hover{
-    		color: #2c3e50;
-    		text-decoration: none;
-    	}
+  width: 32.3%;
+  float: left;
+  padding: 5px 0;
+  margin: 10px 0;
+  text-align: center;
+  border-right: 1px solid #eeeeee;
+  line-height: 18px;
+  a{
+    color: #2c3e50;
+    &:hover{
+    color: #2c3e50;
+    text-decoration: none;
     }
+  }
     
-    &:last-child{
-			border: 0;
-		}
+  &:last-child{
+	border: 0;
+  }
 }
+
 .user_imformations{
-	margin-top: 10px;
-	margin-bottom:10px;
+  margin-top: 10px;
+  margin-bottom:10px;
+  color: #7f8c8d;
+  a{
 	color: #7f8c8d;
-	a{
-		color: #7f8c8d;
-		&:hover{
-			color:#2c3e50
-		}
+	&:hover{
+	color:#2c3e50
 	}
+  }
 }
+
 .user_imformation{
   margin-bottom: 3px;
 }
+
 .stats_user_name{
-	a{
-		color: #95a5a6;
-        font-size: 14px;
-        font-weight: bold;
-	}
+  a{
+	color: #95a5a6;
+    font-size: 14px;
+    font-weight: bold;
+  }
 }
 
 .member{

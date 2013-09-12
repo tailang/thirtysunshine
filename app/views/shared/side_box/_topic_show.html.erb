@@ -1,21 +1,21 @@
 <% if user_signed_in? %>
 <%= render 'shared/user_infos' %>
 <% else %>
- <%= render 'shared/welcome' %>
+<%= render 'shared/welcome' %>
 <% end %>
 
 <div class="box">
     <div class="box_header">
       该标签下的话题
-    </div>
-    <ul>
+  </div>
+  <ul>
     <% node.topics.limit(6).each do |topic| %>
     <% unless current_topic == topic %>
-     <li><%= link_to topic.title, topic_path(topic) %></li>
-     <% end -%>
-     <% end -%>
-    </ul>
- </div>
+    <li><%= link_to topic.title, topic_path(topic) %></li>
+    <% end -%>
+    <% end -%>
+  </ul>
+</div>
 
 <%= render 'shared/site_help' %>
 

@@ -3,87 +3,87 @@
   <div class="span9">
   	<div class="box">
 
-<div class="img_username_home_page">
-  <div class="media">
-<div class="pull-left">
-  <%= image_tag(@user.avatar_url(:large), :class => "img-rounded media-object") %>
-</div>
- <div class="media-body">
- 	<div class="media-heading">
- 	  <%= @user.username %>
- 	</div>
- 	<div class="media">
- 	  <div class="user_id">第<%= @user.id %>位会员</div>
- 	</div>
- </div>
-</div>
-</div>
-
-<ul class="user_imformations">
-  <li class="user_imformation">性别:
-   <% if @user.gender == true %>
-         女
-      <% else %>
-         男
-      <% end %>
-  </li>
-
-  <li class="user_imformation">
-  <% unless @user.province.blank? or @user.city.blank?  %>
-  所在地: <%= @user.province %>.<%= @user.city %>
-  <% else %>
-  所在地: 未设置
-  <% end %>
-  </li>
-
-  <li class="user_imformation">
-    <% unless @user.school.blank?%>
-    学校: <%= @user.school %>
-    <% else %>
-    学校: 未设置
-    <% end -%>
-  </li>
-
-  <li class="user_imformation">
-    <% unless @user.douban.blank?%>
-    豆瓣: <%= link_to @user.douban, "#{@user.douban}", :target => "_blank" %>
-    <% else %>
-    豆瓣: 未设置
-    <% end -%>
-  </li>
-
-  <li class="user_imformation">
-    <% unless @user.sinaweibo.blank?%>
-    微博: <%= link_to @user.sinaweibo, "#{@user.sinaweibo}", :target => "_blank" %>
-    <% else %>
-    微博: 未设置
-    <% end -%>
-  </li>
-
-<li class="user_imformation">
-    <% unless @user.site.blank?%>
-    个人博客: <%= link_to @user.site, "#{@user.site}", :target => "_blank" %>
-    <% else %>
-    个人博客: 未设置
-    <% end -%>
-  </li>
-</ul>
-  	</div>
-    <div class="box">
-       <div class="box_header">最近发表的话题</div>
-       <%= render :partial => "shared/side_box_home_page/current_topics", :locals => {:topics => @topics} %>
-    </div>
-
-    <div class="box">
-      <div class="box_header">
-        最近的评论
+      <div class="img_username_home_page">
+        <div class="media">
+          <div class="pull-left">
+            <%= image_tag(@user.avatar_url(:large), :class => "img-rounded media-object") %>
+          </div>
+          <div class="media-body">
+            <div class="media-heading">
+              <%= @user.username %>
+            </div>
+            <div class="media">
+              <div class="user_id">第<%= @user.id %>位会员</div>
+            </div>
+          </div>
+        </div>
       </div>
-        <%= render :partial => "shared/side_box_home_page/current_comments", :locals => {:comments => @comments} %>
-    </div>
+
+      <ul class="user_imformations">
+        <li class="user_imformation">性别:
+         <% if @user.gender == true %>
+         女
+         <% else %>
+         男
+         <% end %>
+       </li>
+
+       <li class="user_imformation">
+        <% unless @user.province.blank? or @user.city.blank?  %>
+        所在地: <%= @user.province %>.<%= @user.city %>
+        <% else %>
+        所在地: 未设置
+        <% end %>
+      </li>
+
+      <li class="user_imformation">
+        <% unless @user.school.blank?%>
+        学校: <%= @user.school %>
+        <% else %>
+        学校: 未设置
+        <% end -%>
+      </li>
+
+      <li class="user_imformation">
+        <% unless @user.douban.blank?%>
+        豆瓣: <%= link_to @user.douban, "#{@user.douban}", :target => "_blank" %>
+        <% else %>
+        豆瓣: 未设置
+        <% end -%>
+      </li>
+
+      <li class="user_imformation">
+        <% unless @user.sinaweibo.blank?%>
+        微博: <%= link_to @user.sinaweibo, "#{@user.sinaweibo}", :target => "_blank" %>
+        <% else %>
+        微博: 未设置
+        <% end -%>
+      </li>
+
+      <li class="user_imformation">
+        <% unless @user.site.blank?%>
+        个人博客: <%= link_to @user.site, "#{@user.site}", :target => "_blank" %>
+        <% else %>
+        个人博客: 未设置
+        <% end -%>
+      </li>
+    </ul>
   </div>
+  <div class="box">
+   <div class="box_header">最近发表的话题</div>
+   <%= render :partial => "shared/side_box_home_page/current_topics", :locals => {:topics => @topics} %>
+ </div>
+
+ <div class="box">
+  <div class="box_header">
+    最近的评论
+  </div>
+  <%= render :partial => "shared/side_box_home_page/current_comments", :locals => {:comments => @comments} %>
+</div>
+</div>
 <div class="span3">
-<%= render :partial => "shared/side_box_home_page/states", :locals => {:user => @user} %>
-<%= render :partial => "shared/side_box_home_page/description", :locals => {:user => @user} %>
-<%= render :partial => "shared/side_box_home_page/douban", :locals => {:user => @user} unless @user.douban.blank? %>
+  <%= render :partial => "shared/side_box_home_page/states", :locals => {:user => @user} %>
+  <%= render :partial => "shared/side_box_home_page/description", :locals => {:user => @user} %>
+  <%= render :partial => "shared/side_box_home_page/douban", :locals => {:user => @user} unless @user.douban.blank? %>
 </div>
 </div>

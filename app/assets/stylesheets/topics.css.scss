@@ -1,82 +1,81 @@
-// Place all the styles related to the topics controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 @import "globals/variables.css.scss";
+
 .topic_line{
-	border-bottom: 1px solid $grayMediumLight;
-	padding-bottom: 10px;
-	margin-bottom: 10px;
+  border-bottom: 1px solid $grayMediumLight;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .topic_line_infos{
-	a{
-		font-size: 12px;
-		color: #777;
-	}
+  a{
+	font-size: 12px;
+	color: #777;
+  }
 }
 
 #topics_title{
-	font-size: 14px;
-	white-space: nowrap;
-    width: 100%;                  /* IE6 需要定义宽度 */
-    overflow: hidden;             
- 
-    -o-text-overflow: ellipsis;    /* Opera */
-    text-overflow:    ellipsis;    /* IE, Safari (WebKit) */
+  font-size: 14px;
+  white-space: nowrap;
+  width: 100%;                  /* IE6 需要定义宽度 */
+
+          overflow: hidden;
+     text-overflow: ellipsis;    /* IE, Safari (WebKit) */             
+  -o-text-overflow: ellipsis;    /* Opera */
+     
 }
 
 .topic_infos{
-	border-bottom: 1px solid $grayMediumLight;
-	padding-bottom: 5px;
-	margin-bottom: 10px;
-	.topic_title{
-		font-size: 22px;
-        color: #333;
-        text-align: left;
-        line-height: 100%;
-        margin-bottom: 8px;
-	}
-	.topic_infos_no_title{
-		color: #bbb;
-        margin-bottom: 2px;
-        font-size: 12px;
-        a{
-        	color: #888;
-        }
-		}	
+  border-bottom: 1px solid $grayMediumLight;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  .topic_title{
+	font-size: 22px;
+    color: #333;
+    text-align: left;
+    line-height: 100%;
+    margin-bottom: 8px;
+  }
+  .topic_infos_no_title{
+	color: #bbb;
+    margin-bottom: 2px;
+    font-size: 12px;
+    a{
+      color: #888;
+    }
+  }	
 }
 
 .topic_bottom_infos{
-	font-size: 12px;
-	border: 0px solid #ffffff;
-	padding-bottom: 7px;
-	margin-bottom: 7px;
+  font-size: 12px;
+  border: 0px solid #ffffff;
+  padding-bottom: 7px;
+  margin-bottom: 7px;
 }
 
 .content_doc{
-	word-break: break-all;
-	font-size: 14px;
-	line-height: 1.6em;
+  word-break: break-all;
+  font-size: 14px;
+  line-height: 1.6em;
 }
 
 .break_word{
-	word-break: break-all;
+  word-break: break-all;
 }
 
 .topic_img{
-	margin-left: 10px;
+  margin-left: 10px;
 }
 
 .current_topic_node{
-	a{
-		color:#ffffff;
-		&:hover{
-			color: #ffffff;
-			text-decoration: none;
-		}
+  a{
+	color:#ffffff;
+	&:hover{
+	color: #ffffff;
+	text-decoration: none;
 	}
+  }
 
-	#fontcolor{
-		color: #ffffff;
-	}
+  #fontcolor{
+	color: #ffffff;
+  }
 }
