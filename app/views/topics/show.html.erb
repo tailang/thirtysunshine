@@ -91,7 +91,7 @@ document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static
   <%= render 'topics/comment_box' %>
 </div>
 <div class="span3">
-  <%= render :partial => 'shared/side_box/topic_show', :locals => {:node => @node} %>  
+  <%= render :partial => 'shared/side_box/topic_show', :locals => {:node => @node, :current_topic => @topic} %>  
 </div>
 </div>
 

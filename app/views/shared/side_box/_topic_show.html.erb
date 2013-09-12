@@ -10,7 +10,9 @@
     </div>
     <ul>
     <% node.topics.limit(6).each do |topic| %>
+    <% unless current_topic == topic %>
      <li><%= link_to topic.title, topic_path(topic) %></li>
+     <% end -%>
      <% end -%>
     </ul>
  </div>
