@@ -18,8 +18,8 @@
 /config/database.yml
 
 #Ignore devise.rb
-/config/devise.rb
+config/initializers/devise.rb
 
 #Ignore development production ENV
-/config/development.rb
-/config/production.rb
+config/environments/development.rb
+config/environments/production.rb
