@@ -11,3 +11,12 @@ $(function(){
     event.preventDefault();
   });
 })
+
+//插入图片
+$(function(){
+  $(document).on('click', '.insertpicture', function() {
+    var $textarea = $('#new_comment textarea');
+    $textarea.focus().val($textarea.val() + ' ' + '!'+'['+']'+'('+')');
+    event.preventDefault();
+  });
+})

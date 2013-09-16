@@ -4,7 +4,7 @@
   <div class="field">
 	<div>
 	  <%= f.label :comment, "添加回应" %>
-	  <a href="http://weibotuchuang.sinaapp.com/", target="_blank", class="picture_link label label-info">图片</a>
+	  <%= link_to '图片', '#new_comment', :class => 'insertpicture picture_link label label-info' %>
 	</div>
 	<%= f.text_area :comment, :style => "height:100px; width:660px" %>
    </div><br>

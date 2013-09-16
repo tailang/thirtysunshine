@@ -13,9 +13,9 @@
   <div class="controls"><%= f.text_field :title, :style => "width:480px;" %></div>
 </div>
 
-<div class=field>
+<div id="new_comment">
   <%= f.label :body, "话题内容" %>
-  <a href="http://weibotuchuang.sinaapp.com/", target="_blank", class="picture_link label label-info">图片</a>
+  <%= link_to '图片', '#new_comment', :class => 'insertpicture picture_link label label-info' %>
   <%= f.text_area :body, :style => "height:500px; width:660px" %>
 </div><br>
 <div class="action">
