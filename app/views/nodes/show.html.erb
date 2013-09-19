@@ -5,7 +5,7 @@
     <div class="box">
       <div class="label current_topic_node"><%= @node.name %></div> 标签下共有 <div class="label label-info current_topic_node"><%= @topics.count %></div> 个话题
       <div class="pull-right">
-        <%= link_to "返回全部话题", topics_path %>
+        <%= link_to "返回主社区", topics_path %>
       </div>
     </div>
     <% unless @topics.empty? %>

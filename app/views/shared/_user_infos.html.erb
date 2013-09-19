@@ -20,7 +20,7 @@
       <div id="user_state_comments_count"><%=link_to raw("#{current_user.comments.count}<br>回应"), comments_user_path(current_user) %></div>
     </div>
     <div class="state">
-      <%= link_to raw("#{current_user.follow_count}<br>收藏"), follows_user_path(current_user) %>
+      <div id="user_state_follow_topics_count"><%= link_to raw("#{current_user.follow_count}<br>收藏"), follows_user_path(current_user) %></div>
     </div>
   </div>
 
