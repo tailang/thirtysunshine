@@ -22,7 +22,6 @@ class User < ActiveRecord::Base
   validates :username, :presence => true, :uniqueness => true, :length => {:maximum => 12}
   validate :username_cannot_contain_invalid_characters
   validates :role, :presence => true
-
   def is_root?
     self.role == 'root'
   end

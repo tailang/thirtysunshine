@@ -21,7 +21,7 @@
         <div id="topics_title topic_line_infos">
          <div id="current_topics_title">
            <span class="stats_user_name">
-            <%= link_to notification.comment.user.username, user_path(notification.comment.user) %> 提到你, 在话题 <%= link_to notification.comment.commentable.title, topic_path(notification.comment.commentable) %></span>
+            <%= link_to notification.comment.user.username, user_path(notification.comment.user) %> 提到你或回应了你的话题, 在话题 <%= link_to notification.comment.commentable.title, topic_path(notification.comment.commentable) %></span>
             <div class="pull-right">
               <%= link_to "删除", notification_path(notification), :method => :delete, :class => "label label-important" %>
             </div>
