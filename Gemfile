@@ -41,4 +41,3 @@ gem "acts_as_follower"
 gem 'redcarpet'
 gem 'coderay'
 
-
