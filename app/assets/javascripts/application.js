@@ -1,5 +1,6 @@
 //= require jquery
 //= require jquery_ujs
+//= require kindeditor
 //= require bootstrap
 //= require_tree .
 
@@ -7,7 +8,7 @@
 $(function(){
   $(document).on('click', '.at', function() {
     var $textarea = $('#new_comment textarea');
-    $textarea.focus().val($textarea.val() + '@' + $(this).data('user-name') + ' ');
+    $textarea.focus().val($textarea.val() + '['+'回应' + '@' + $(this).data('user-name') + ' '+']'+'  ');
     event.preventDefault();
   });
 })

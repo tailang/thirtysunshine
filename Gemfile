@@ -41,3 +41,5 @@ gem "acts_as_follower"
 gem 'redcarpet'
 gem 'coderay'
 
+#kindeditor
+gem 'rails_kindeditor', '~> 0.4.0'

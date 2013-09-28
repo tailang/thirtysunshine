@@ -9,7 +9,7 @@
       该标签下的话题
   </div>
   <ul>
-    <% node.topics.limit(6).each do |topic| %>
+    <% node.topics.limit(10).each do |topic| %>
     <% unless current_topic == topic %>
     <li><%= link_to topic.title, topic_path(topic) %></li>
     <% end -%>

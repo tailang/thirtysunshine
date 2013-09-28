@@ -15,8 +15,7 @@
 
 <div id="new_comment">
   <%= f.label :body, "话题内容" %>
-  <%= link_to '图片', '#new_comment', :class => 'insertpicture picture_link label label-info' %>
-  <%= f.text_area :body, :style => "height:500px; width:660px" %>
+	<%= f.kindeditor :body, :height => 500, :width => 671, :items => ['formatblock','insertorderedlist','insertunorderedlist','image','link','baidumap','code'], :allowImageUpload => false %>
 </div><br>
 <div class="action">
   <%= f.submit "发布", :class => "btn btn-primary" %>

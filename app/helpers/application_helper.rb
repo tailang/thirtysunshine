@@ -61,5 +61,9 @@ module ApplicationHelper
     markdown(make_mention_links(text))
   end
 
+	def kindeditor_output_content(text)	
+		return "" if text.nil? or text.blank?
+    make_mention_links(text).html_safe
+	end
 end
 

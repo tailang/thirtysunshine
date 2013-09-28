@@ -53,9 +53,13 @@
 }
 
 .content_doc{
+  color: #313131;
   word-break: break-all;
   font-size: 14px;
   line-height: 1.6em;
+	span{
+	  color: #313131;
+	}
 }
 
 .break_word{
