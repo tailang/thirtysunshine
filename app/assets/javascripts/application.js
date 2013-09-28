@@ -7,17 +7,18 @@
 //点击回复，生成@
 $(function(){
   $(document).on('click', '.at', function() {
-    var $textarea = $('#new_comment textarea');
-    $textarea.focus().val($textarea.val() + '['+'回应' + '@' + $(this).data('user-name') + ' '+']'+'  ');
+   // var $textarea = $('#new_comment textarea');
+	 document.location='#new_comment';
+    comment_editor.html(comment_editor.html()+'['+'回应' + '@' + $(this).data('user-name') + ' '+']'+'  ');
     event.preventDefault();
   });
 })
-
+	
 //插入图片
-$(function(){
-  $(document).on('click', '.insertpicture', function() {
-    var $textarea = $('#new_comment textarea');
-    $textarea.focus().val($textarea.val() + ' ' + '!'+'['+']'+'('+')');
-    event.preventDefault();
-  });
-})
+//$(function(){
+  //$(document).on('click', '.insertpicture', function() {
+    //var $textarea = $('#new_comment textarea');
+    //$textarea.focus().val($textarea.val() + ' ' + '!'+'['+']'+'('+')');
+    //event.preventDefault();
+  //});
+//})
