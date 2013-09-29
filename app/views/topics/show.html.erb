@@ -58,6 +58,7 @@
           :method => :delete,
           :confirm => "确定删除吗？" if can? :destroy, @topic %>
           <%= render :partial => "shared/follow_topic", :locals => {:topic => @topic} %> 
+					<%= link_to raw("<span>直接回应</span>"), "#new_comment" %>
         </div>
       </div>
     </div>

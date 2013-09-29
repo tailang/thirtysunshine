@@ -15,7 +15,7 @@
 
 <div id="new_comment">
   <%= f.label :body, "话题内容" %>
-	<%= f.kindeditor :body, :height => 500, :width => 671, :items => ['formatblock','insertorderedlist','insertunorderedlist','image','link','baidumap','flash','code','preview'], :allowFlashUpload => false, :allowImageUpload => false %>
+	<%= f.kindeditor :body, :height => 500, :width => 671, :items => ['formatblock','insertorderedlist','insertunorderedlist','image','link','baidumap','flash','code','preview'], :allowFlashUpload => false, :allowImageUpload => false, :cssData => 'body{font-size: 14px;}' %>
 </div><br>
 <div class="action">
   <%= f.submit "发布", :class => "btn btn-primary" %>

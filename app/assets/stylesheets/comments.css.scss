@@ -14,6 +14,12 @@
   font-size: 12px;
   border-bottom: 1px dashed $grayMediumLight;
   padding-bottom: 5px;
+	#comment_delete{
+	  color: #ffffff;
+		&:hover{
+		  color: #aaaaaa;
+		}
+	}
 	#user_name{
 	  color: #888;
 	  text-decoration: none;
@@ -25,11 +31,14 @@
 	}
 	
 }
-.picture_link{
+#gotop_link{
   float: right;
   margin-top: -23px;
   margin-right: 7px;
   margin-bottom: 10px;
+	a{
+	  text-decoration: none;
+	}
 }
 
 #current_topics_title{
