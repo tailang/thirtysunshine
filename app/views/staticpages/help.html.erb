@@ -1,6 +1,6 @@
 <%= provide(:title, "帮助") %>
  	<div class="row">
-  <div class="span12">
+  <div class="span9">
   	<div class="box">
   		<h1>如何上传图片？</h1><br>
       <h2>本站暂时不支持本地图片上传，您可以使用远程图片或图床来添加图片.</h2><br>
@@ -32,40 +32,10 @@
      <ol>
       <h2><li>@某人</li></h2><br>
       与微博类似，你可以在评论中@某个人（注意格式： @ + 用户名 + 空格），然后会创建一条消息发送给你@的人，提醒他有人@他了.
-      <h2><li>改变文字大小,使用诺干个#号(默认字体大小是14px)</li></h2><br><br>
-      (1)#使用1.5em大小字体 <br>
-         将显示 <h1>使用1.5em大小字体</h1><br>
-      (2)##使用1.2em大小字体 <br>
-         将显示 <h2>使用1.2em大小字体</h2><br>
-      (3)###使用1em大小字体 <br>
-         将显示 <h3>使用1em大小字体</h3><br>
-      (4)####使用0.8em大小字体 <br>
-         将显示 <h4>使用0.8em大小字体</h4><br>
-      (5)#####使用0.5em大小字体 <br>
-         将显示 <h5>使用0.5em大小字体</h5><br><br>
-      <h2><li>显示代码，用```</li></h2><br>
-      显示c语言代码 <br>
-      ```c <br>
-      #include("stdio.h")<br>
-      int main(void)<br>
-      {<br>
-      	print "30度阳光";<br>
-      	renturn 0;<br>
-      }<br>
-      ```<br>
-      将显示为 <br>
-      <%= image_tag("help/4.png") %><br><br>
-      显示ruby代码 <br>
-      ```ruby <br>
-      puts "30度阳光" <br>
-      ```<br>
-      将显示为 <br>
-      <%= image_tag("help/5.png") %><br><br>
-
-      <h2><li>引用其他内容，如你想引用鲁迅的名言,用></li></h2><br>
-      如:>横眉冷对千夫指，俯首甘为孺子牛。 <br>
-      将显示为 <br>
-      <%= image_tag("help/6.png") %>
      </ol>
   	</div>
+</div>
+  <div class="span3">
+    <%= render 'shared/site_help' %>
+  </div>
 </div>
