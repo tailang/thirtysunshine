@@ -18,7 +18,9 @@
 /config/database.yml
 
 #Ignore devise.rb
-config/initializers/devise.rb
+#config/initializers/devise.rb
 
 
 public/uploads/user/*
+
+*.swp
