@@ -30,12 +30,7 @@
               <span>本帖由-<%= link_to topic.user.username, user_path(topic.user) %>-于<%= time_ago_in_words(topic.created_at) %>发布</span>
               <div class="pull-right">
                <span class="label label-info">
-                <% topic_count = topic.comments.count %>
-                <% if topic_count > 0 %>
-                <%= topic_count %>
-                <% else %>
-                抢沙发啦!
-                <% end %>
+                <%= topic.comments.count %>
               </span>
             </div>
           </div>
