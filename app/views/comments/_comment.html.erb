@@ -11,7 +11,7 @@
               <%= link_to comment.user.username, user_path(comment.user), :id => "user_name" %>  
               <span>发表于<%= time_ago_in_words(comment.created_at) %></span>
               <div class="pull-right">
-                <%= link_to raw('<span id="comment_delete">删除该评论</span>'),  topic_comment_path(comment.commentable, comment), :method => :delete, :remote => true, :confirm => "确定删除该回应?" if can? :destroy, comment%>
+								<%= link_to image_tag('delete.png'),  topic_comment_path(comment.commentable, comment), :method => :delete, :remote => true, :confirm => "确定删除该回应?" if can? :destroy, comment%> &nbsp;
 								<%= link_to image_tag('reply.png'), '#', :class => 'at', 'data-user-name' => comment.user.username if user_signed_in? %>
               </div>
             </div>
