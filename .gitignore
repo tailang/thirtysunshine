@@ -21,6 +21,8 @@
 #config/initializers/devise.rb
 
 
-public/uploads
+/public/uploads
 
 *.swp
+
+/config/initializers/secret_token.rb
