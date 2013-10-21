@@ -4,7 +4,7 @@ Devise.setup do |config|
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class with default "from" parameter.
-  config.mailer_sender = "test_cp@126.com" #设置网站邮箱
+  config.mailer_sender = "sunshine_30du@163.com" #设置网站邮箱
 
   # Configure the class responsible to send e-mails.
   # config.mailer = "Devise::Mailer"
