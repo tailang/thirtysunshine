@@ -21,6 +21,6 @@
 #config/initializers/devise.rb
 
 
-public/uploads/user/*
+public/uploads
 
 *.swp
