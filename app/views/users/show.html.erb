@@ -13,7 +13,11 @@
 							<%= @user.username %>
 						</div>
 						<div class="media">
-							<div class="user_id">第<%= @user.id %>位会员</div>
+							<div class="user_id">第<%= @user.id %>位会员
+								<% if @user.role == "admin" or @user.role == "root" %>
+									<span class="label">管理员</span>
+								 <% end %>
+							</div>
 						</div>
 					</div>
 				</div>
