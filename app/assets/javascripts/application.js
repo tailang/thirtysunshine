@@ -14,6 +14,19 @@ $(function(){
   });
 })
 	
+$(function(){
+$(window).scroll(function(){  //只要窗口滚动,就触发下面代码 
+var scrollt = document.documentElement.scrollTop + document.body.scrollTop; //获取滚动后的高度 
+if( scrollt >200 ){  //判断滚动后高度超过200px,就显示  
+$('<a id="gotop" href="#"><span>回到顶部</span></a>').appendTo('body');
+}else{      
+$('a').remove('#gotop');
+}
+});
+$("#gotop").click(function(){ //当点击标签的时候,使用animate在200毫秒的时间内,滚到顶部
+$("html,body").animate({scrollTop:"0px"},200);
+});
+});
 //插入图片
 //$(function(){
   //$(document).on('click', '.insertpicture', function() {

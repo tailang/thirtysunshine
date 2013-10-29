@@ -5,9 +5,6 @@
 	<div>
 		<%= f.label :comment, "添加回应"%>
 	</div>
-	<div id="gotop_link">
-		<%= link_to  raw("<span>回到顶部</span>"), "#" %>
-	</div>
 	<%= f.kindeditor :comment, :height => 120, :items => ['image','link','baidumap','emoticons','flash','code','preview'],:width => 671, :allowImageUpload => true, :allowFlashUpload => false, :editor_id => 'comment_editor', :cssData => 'body{font-size: 14px;}' %>
    </div><br>
    <div class="action">

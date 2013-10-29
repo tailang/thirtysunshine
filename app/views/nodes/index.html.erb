@@ -3,9 +3,8 @@
   <div class="span9">
   	<div class="box">
   	  <% @nodes.each do |node| %>
-       <%= node.name %>
-       <%= output_content node.introduction %>
-       <%= link_to "删除", node, :method => :delete, :confirm => "谨慎操作，删除后对应的topic将无法显示"%><br>
+       <%= link_to node.name, node_path(node) %>
+			 <%= output_content node.introduction %><br>
       <% end -%>
   	</div>
   </div>

@@ -4,3 +4,26 @@
  */
  
 @import "bootstrap";
+#gotop{
+	display: block;
+	width: 35px;
+	height: 43px;
+	position: fixed;
+	bottom: 50px;
+	right: 40px;
+	border-radius: 5px 5px 5px 5px;
+	text-decoration: none;
+	background-color: #999999;
+	span{
+	  display: block;
+		/*width: 60px;*/
+		color: #dddddd;
+		/*font-size:40px; */
+		text-align: center; 
+		margin-top: 5px;
+	  margin-left: -7px;	
+		&:hover{
+		  color: #cccccc;
+		}
+	}
+}
