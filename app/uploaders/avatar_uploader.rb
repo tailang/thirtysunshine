@@ -2,11 +2,11 @@
 
 class AvatarUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
-
+	include Piet::CarrierWaveExtension
   # Include the Sprockets helpers for Rails 3.1+ asset pipeline compatibility:
   # include Sprockets::Helpers::RailsHelper
   # include Sprockets::Helpers::IsolatedHelper
-
+	process :optimize
   # Choose what kind of storage to use for this uploader:
   storage :file
   # storage :fog

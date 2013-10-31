@@ -30,6 +30,7 @@ gem 'cancan', '~> 1.6.10'
 #上传图片
 gem 'carrierwave', '0.6.2'
 gem 'mini_magick'
+gem 'piet'
 
 #评论
 gem 'acts_as_commentable', '3.0.1'
