@@ -21,7 +21,7 @@
                     <%= link_to @topic.node.name, node_path(@topic.node), :id => "fontcolor" %>
                   </div>
                 </span>
-                <span>本帖由-<%= link_to @topic.user.username, user_path(@topic.user) %>-于<%= time_ago_in_words(@topic.created_at) %>发布</span>
+								<span><u><%= link_to @topic.user.username, user_path(@topic.user) %></u>&nbsp;•&nbsp;发布于<%= time_format(@topic.created_at) %></span>
               </div>
             </div>
 

@@ -65,5 +65,11 @@ module ApplicationHelper
 		return "" if text.nil? or text.blank?
     make_mention_links(text).html_safe
 	end
+
+	#由于格式化时间显示，取出时间后面的+0800
+	def time_format(time)
+		time.to_s.sub(/\++[0-9]{4}/,"")
+	end
+
 end
 
