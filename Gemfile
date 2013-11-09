@@ -44,3 +44,5 @@ gem 'coderay'
 
 #kindeditor
 gem 'rails_kindeditor', '~> 0.4.0'
+
+gem 'cells', '~> 3.9.0'

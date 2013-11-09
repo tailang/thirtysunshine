@@ -9,8 +9,6 @@ class UsersController < ApplicationController
   end
   
   def show
-    @topics = @user.topics.order('created_at desc').limit(10)
-    @comments = @user.comments.order('created_at desc').limit(10)
   	#@user = User.find(params[:id])
   end
 
@@ -31,17 +29,14 @@ class UsersController < ApplicationController
 
   def topics
     @user = User.find(params[:id])
-    @topics = @user.topics.paginate(:page => params[:page], :per_page => 20)
   end
 
   def follows
     @user = User.find(params[:id])
-    @topics_follow = @user.follows.paginate(:page => params[:page], :per_page => 15)
   end
 
   def comments
     @user = User.find(params[:id])
-    @comments = @user.comments.paginate(:page => params[:page], :per_page => 15)
   end
   
 end

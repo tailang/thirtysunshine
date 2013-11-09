@@ -4,12 +4,23 @@
    <div class="box">
     <div class="box_header"><div class="stats_user_name"><%= link_to @user.username, user_path(@user) %>的回复</div>    
     </div>
-    <%= render :partial => "shared/side_box_home_page/current_comments", :locals => {:comments => @comments} %>
-    <%= will_paginate @comments, :previous_label => '<前页', :next_label => '后页>' %>
+    <%= render_cell :user, :all_comments, :user => @user %>
    </div>
 </div>
 
-<div class="span3">
-  <%= render :partial => "shared/side_box_home_page/states", :locals => {:user => @user} %>
-</div>
+  <div class="span3">
+    <div class="box">
+      <div class="tabbable tabs-right">
+        <ul class="nav nav-tabs">
+          <li><%= link_to "个人信息", user_path(@user) %></li>
+          <li><%= link_to "发布话题", topics_user_path(@user) %></li>
+          <li class="active"><%= link_to "回应话题", comments_user_path(@user) %></li>
+          <li><%= link_to "收藏话题", follows_user_path(@user) %></li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <%= render_cell :user, :douban, :user => @user%>
+    </div>
+ 
 </div>

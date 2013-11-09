@@ -45,6 +45,12 @@
 </div>
 
 <div class="span3">
-  <%= render :partial => 'shared/side_box/node_show', :locals => {:node => @node} %>
+  <% if user_signed_in? %>
+    <%= render_cell :user, :current_user_infos, :user => current_user %>
+  <% else %>
+    <%= render_cell :user, :welcome %>
+  <% end %>
+  <%= render_cell :node, :node_infos, :node => @node  %>
+  <%= render_cell :topic, :site_infos %>
 </div>
 </div>

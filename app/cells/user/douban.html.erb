@@ -1,0 +1,22 @@
+<% if @user.douban.blank? %>
+  <div class="box">
+    <span>未设置豆瓣，无法获取图书信息</span>
+  </div>
+<% else %>
+<div class="box">
+  <div class="box_header">
+    正在看的书:
+  </div>
+  <div><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" width="200" height="200" id="passing" > <param name="movie" value="http://www.douban.com/doushow/<%= @user.douban.split('/').compact.last %>/dolist_random_book_4_2_small_nologo_noself/doushow.swf" /> <param name="quality" value="high" /> <param name="scale" value="noscale"/> <param name="align" value="tl"/> <param name="wmode" value="transparent"/> <embed src="http://www.douban.com/doushow/<%= @user.douban.split('/').compact.last %>/dolist_random_book_4_2_small_nologo_noself/doushow.swf" wmode="transparent" quality="high" width="200" height="200" name="passing" scale="noscale" align="tl" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" /> </object></div>
+
+  <div class="box_header">
+    想看的书:
+  </div>
+  <div><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" width="200" height="200" id="passing" > <param name="movie" value="http://www.douban.com/doushow/<%= @user.douban.split('/').compact.last %>/wishlist_random_book_4_2_small_nologo_noself/doushow.swf" /> <param name="quality" value="high" /> <param name="scale" value="noscale"/> <param name="align" value="tl"/> <param name="wmode" value="transparent"/> <embed src="http://www.douban.com/doushow/<%= @user.douban.split('/').compact.last %>/wishlist_random_book_4_2_small_nologo_noself/doushow.swf" wmode="transparent" quality="high" width="200" height="200" name="passing" scale="noscale" align="tl" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" /> </object></div>
+
+  <div class="box_header">
+    看过看的书:
+  </div>
+  <div><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" width="200" height="200" id="passing" > <param name="movie" value="http://www.douban.com/doushow/<%= @user.douban.split('/').compact.last %>/collection_random_book_4_2_small_nologo_noself/doushow.swf" /> <param name="quality" value="high" /> <param name="scale" value="noscale"/> <param name="align" value="tl"/> <param name="wmode" value="transparent"/> <embed src="http://www.douban.com/doushow/<%= @user.douban.split('/').compact.last %>/collection_random_book_4_2_small_nologo_noself/doushow.swf" wmode="transparent" quality="high" width="200" height="200" name="passing" scale="noscale" align="tl" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" /> </object></div>
+</div>
+<% end -%>

@@ -1,0 +1,12 @@
+<% @topics.each do |topic| %>
+  <div class="topic_line">
+  <div id="topics_title">
+    <div class="label current_topic_node"><%= link_to topic.node.name, node_path(topic.node) %></div>
+    <div class="pull-right"><span><%= time_format topic.created_at %></span>
+   	<div class="label label-info"><%= topic.comments.count %></div>
+    </div>
+    <%= link_to topic.title, topic_path(topic) %>
+  </div>
+  </div>
+<% end -%>
+  <%= will_paginate @topics, :previous_label => '<前页', :next_label => '后页>' %> 

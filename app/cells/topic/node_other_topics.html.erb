@@ -1,0 +1,11 @@
+<div class="box">
+    <div class="box_header">
+      该标签下的话题
+  </div>
+  <ul>
+    <% @topics.each do |topic| %>
+    <li><%= link_to topic.title, topic_path(topic) %></li>
+    <% end -%>
+  </ul>
+</div>
+

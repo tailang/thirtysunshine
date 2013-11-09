@@ -7,7 +7,11 @@
     </div>
   </div>
   <div class="span3">
-  	<%= render 'shared/side_box/topic_create' %>
+ <% if user_signed_in? %>
+     <%= render_cell :user, :current_user_infos, :user => current_user %>
+   <% else %>
+     <%= render_cell :user, :welcome %>
+   <% end %>
   </div>
 </div>
 

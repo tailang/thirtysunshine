@@ -38,7 +38,7 @@
       <div class="topic_bottom_infos">
 
         <!-- Baidu Button BEGIN -->
-        <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
+<!--        <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
           <a class="bds_tsina"></a>
           <a class="bds_douban"></a>
           <a class="bds_qzone"></a>
@@ -49,7 +49,7 @@
         <script type="text/javascript" id="bdshell_js"></script>
         <script type="text/javascript">
         document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
-        </script>
+        </script> -->
         <!-- Baidu Button END -->
 
         <div class="pull-right">
@@ -83,7 +83,13 @@
     <%= render 'topics/comment_box' %>
   </div>
   <div class="span3">
-    <%= render :partial => 'shared/side_box/topic_show', :locals => {:node => @node, :current_topic => @topic} %>  
+ <% if user_signed_in? %>
+     <%= render_cell :user, :current_user_infos, :user => current_user %>
+   <% else %>
+     <%= render_cell :user, :welcome %>
+   <% end %>
+    <%= render_cell :topic, :node_other_topics, :node => @node %>
+    <%= render_cell :topic, :site_about %>
   </div>
 </div>
 
