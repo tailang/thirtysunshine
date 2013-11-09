@@ -1,15 +1,15 @@
 class UserCell < Cell::Rails
   helper ApplicationHelper
 
-  cache :douban, :expires_in => 1.days
+  cache :douban, :expires_in => 30.days
   cache :current_topics, :expires_in => 1.hours
   cache :current_comments, :expires_in => 1.hours
   cache :follow_topics, :expires_in => 1.hours
-  cache :all_topics, :expires_in => 1.hours
-  cache :all_comments, :expires_in => 1.hours
-  cache :all_follow_topics, :expires_in => 1.hours
-  cache :current_user_infos, :expires_in => 1.hours  
+  cache :all_topics, :expires_in => 30.minutes
+  cache :all_comments, :expires_in => 30.minutes
+  cache :all_follow_topics, :expires_in => 30.minutes
   cache :welcome, :expires_in => 30.days  
+
   def douban(args)
     @user = args[:user]
     render
@@ -51,6 +51,7 @@ class UserCell < Cell::Rails
     render
   end
 
+  #关系到session不能做缓存
   def current_user_infos(args)
     @user = args[:user] 
     render
@@ -59,4 +60,5 @@ class UserCell < Cell::Rails
   def welcome
     render
   end
+
 end
