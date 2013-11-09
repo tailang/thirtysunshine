@@ -2,12 +2,6 @@ class UserCell < Cell::Rails
   helper ApplicationHelper
 
   cache :douban, :expires_in => 30.days
-  cache :current_topics, :expires_in => 1.hours
-  cache :current_comments, :expires_in => 1.hours
-  cache :follow_topics, :expires_in => 1.hours
-  cache :all_topics, :expires_in => 30.minutes
-  cache :all_comments, :expires_in => 30.minutes
-  cache :all_follow_topics, :expires_in => 30.minutes
   cache :welcome, :expires_in => 30.days  
 
   def douban(args)
