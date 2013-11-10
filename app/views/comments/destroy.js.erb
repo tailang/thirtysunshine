@@ -1,3 +1,2 @@
 $("#<%= dom_id(@comment) %>").remove();
 $('#topic_comments_count').html('共有<%= @comment.commentable.comments.count %>条回应')
-$('#user_state_comments_count').html('<%= current_user.comments.count %><br>回应')

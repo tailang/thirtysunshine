@@ -1,2 +1,1 @@
-$('#user_state_follow_topics_count').html("<%= current_user.follow_count %><br>收藏")
 $('#follow_topic').html("<%= escape_javascript(render(:partial => 'shared/follow_topic', :locals => {:topic => @topic}))%>")

@@ -1,4 +1,3 @@
 $('<%= escape_javascript(render :partial => 'comments/comment', :locals => { :comment => @comment }) %>').appendTo('#comments').hide().fadeIn();
 comment_editor.html('');
 $('#topic_comments_count').html('共有<%= @comment.commentable.comments.count %>条回应')
-$('#user_state_comments_count').html('<%= current_user.comments.count %><br>回应')

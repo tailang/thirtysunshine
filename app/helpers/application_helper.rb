@@ -19,7 +19,7 @@ module ApplicationHelper
       :strikethrough =>true
     }
     markdown = Redcarpet::Markdown.new(HTMLwithCodeRay,options)
-    nl_to_br(markdown.render(text)).html_safe
+    sanitize nl_to_br(markdown.render(text)), :tags => %w(br a p) 
   end
 
   class HTMLwithCodeRay < Redcarpet::Render::HTML
