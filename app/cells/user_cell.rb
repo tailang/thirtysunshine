@@ -1,7 +1,6 @@
 class UserCell < Cell::Rails
   helper ApplicationHelper
 
-  cache :douban, :expires_in => 30.days
   cache :welcome, :expires_in => 30.days  
 
   def douban(args)
