@@ -68,10 +68,12 @@ task :deploy => :environment do
     # Put things that will set up an empty directory into a fully set-up
     # instance of your project.
     invoke :'git:clone'
+    invoke :'unicorn:stop'
     invoke :'deploy:link_shared_paths'
     invoke :'bundle:install'
     invoke :'rails:db_migrate'
-    invoke :'rails:assets_precompile:force'
+    invoke :'rails:assets_precompile'
+    invoke :'unicorn:start'
 
     to :launch do
       queue "touch #{deploy_to}/tmp/restart.txt"
@@ -87,6 +89,7 @@ namespace :unicorn do
   set :unicorn_pid, "#{app_path}/tmp/pids/unicorn.pid"
   set :start_unicorn, %{
     cd #{app_path}
+    echo "#{app_path}"
     unicorn -D -c config/unicorn.rb -E production
   }
  
@@ -104,7 +107,7 @@ namespace :unicorn do
   task :stop do
     queue 'echo "-----> Stop Unicorn"'
     queue! %{
-      test -s "#{unicorn_pid}" && kill -QUIT `cat "#{unicorn_pid}"` && echo "Stop Ok" && exit 0
+      test -s "#{unicorn_pid}" && kill -9 `cat "#{unicorn_pid}"` && echo "Stop Ok" && exit 0
       echo >&2 "Not running"
     }
   end
