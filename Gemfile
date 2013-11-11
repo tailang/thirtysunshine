@@ -46,3 +46,7 @@ gem 'coderay'
 gem 'rails_kindeditor', '~> 0.4.0'
 
 gem 'cells', '~> 3.9.0'
+
+group :development do
+  gem 'mina'
+end
