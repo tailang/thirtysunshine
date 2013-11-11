@@ -12,7 +12,6 @@ require 'mina/rbenv'  # for rbenv support. (http://rbenv.org)
 
 set :domain, '121.199.47.65'
 set :deploy_to, '/home/tailang/thirtysunshine'
-set :app_path, "#{deploy_to}/current"
 set :repository, 'tailang@121.199.47.65:thirtysunshine'
 set :branch, 'master'
 
@@ -68,12 +67,10 @@ task :deploy => :environment do
     # Put things that will set up an empty directory into a fully set-up
     # instance of your project.
     invoke :'git:clone'
-    invoke :'unicorn:stop'
     invoke :'deploy:link_shared_paths'
     invoke :'bundle:install'
     invoke :'rails:db_migrate'
-    invoke :'rails:assets_precompile'
-    invoke :'unicorn:start'
+    invoke :'rails:assets_precompile:force'
 
     to :launch do
       queue "touch #{deploy_to}/tmp/restart.txt"
@@ -82,48 +79,4 @@ task :deploy => :environment do
 end
 
 
-
-#                                                                       Unicorn
-# ==============================================================================
-namespace :unicorn do
-  set :unicorn_pid, "#{app_path}/tmp/pids/unicorn.pid"
-  set :start_unicorn, %{
-    cd #{app_path}
-    echo "#{app_path}"
-    unicorn -D -c config/unicorn.rb -E production
-  }
- 
-#                                                                    Start task
-# ------------------------------------------------------------------------------
-  desc "Start unicorn"
-  task :start => :environment do
-    queue 'echo "-----> Start Unicorn"'
-    queue! start_unicorn
-  end
- 
-#                                                                     Stop task
-# ------------------------------------------------------------------------------
-  desc "Stop unicorn"
-  task :stop do
-    queue 'echo "-----> Stop Unicorn"'
-    queue! %{
-      test -s "#{unicorn_pid}" && kill -9 `cat "#{unicorn_pid}"` && echo "Stop Ok" && exit 0
-      echo >&2 "Not running"
-    }
-  end
- 
-#                                                                  Restart task
-# ------------------------------------------------------------------------------
-  desc "Restart unicorn using 'upgrade'"
-  task :restart => :environment do
-    invoke 'unicorn:stop'
-    invoke 'unicorn:start'
-  end
-end
-# For help in making your deploy script, see the Mina documentation:
-#
-#  - http://nadarei.co/mina
-#  - http://nadarei.co/mina/tasks
-#  - http://nadarei.co/mina/settings
-#  - http://nadarei.co/mina/helpers
 
