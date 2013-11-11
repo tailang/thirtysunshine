@@ -17,7 +17,7 @@ set :branch, 'master'
 
 # Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.
 # They will be linked in the 'deploy:link_shared_paths' step.
-set :shared_paths, ['config/database.yml', 'config/secret_token.rb', 'log/unicorn.log', 'tmp/pids/unicorn.pid']
+set :shared_paths, ['config/database.yml', 'config/initializers/secret_token.rb', 'log/unicorn.log', 'tmp/pids/unicorn.pid']
 
 # Optional settings:
    set :user, 'tailang'    # Username in the server to SSH to.
@@ -42,16 +42,19 @@ task :setup => :environment do
   queue! %[mkdir -p "#{deploy_to}/shared/log"]
   queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/log"]
 
-  queue! %[touch "#{deploy_to}/shered/log/unicorn.log"]
+  queue! %[touch "#{deploy_to}/shared/log/unicorn.log"]
   
   queue! %[mkdir -p "#{deploy_to}/shared/config"]
   queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/config"]
 
+  queue! %[mkdir -p "#{deploy_to}/shared/config/initializers"]
+  queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/config/initializers"]
+
   queue! %[touch "#{deploy_to}/shared/config/database.yml"]
   queue! %[echo "-----> Be sure to edit 'shared/config/database.yml'."]
 
-  queue! %[touch "#{deploy_to}/shared/config/secret_token.rb"]
-  queue! %[echo "----->Be sure to edit 'shared/config/secret_token.rb'."]
+  queue! %[touch "#{deploy_to}/shared/config/initializers/secret_token.rb"]
+  queue! %[echo "----->Be sure to edit 'shared/config/initializers/secret_token.rb'."]
 
   queue! %[mkdir -p "#{deploy_to}/shared/tmp/pids"]
   queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/tmp/pids"]
@@ -69,7 +72,7 @@ task :deploy => :environment do
     invoke :'deploy:link_shared_paths'
     invoke :'bundle:install'
     invoke :'rails:db_migrate'
-    invoke :'rails:assets_precompile'
+    invoke :'rails:assets_precompile:force'
 
     to :launch do
       queue "touch #{deploy_to}/tmp/restart.txt"
