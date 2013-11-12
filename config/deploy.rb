@@ -12,6 +12,7 @@ require 'mina/rbenv'  # for rbenv support. (http://rbenv.org)
 
 set :domain, '121.199.47.65'
 set :deploy_to, '/home/tailang/thirtysunshine'
+set :app_path, "#{deploy_to}/current"
 set :repository, 'tailang@121.199.47.65:thirtysunshine'
 set :branch, 'master'
 
@@ -79,4 +80,41 @@ task :deploy => :environment do
 end
 
 
-
+#                                                                       Unicorn
+# ==============================================================================
+namespace :unicorn do
+  set :unicorn_pid, "#{app_path}/tmp/pids/unicorn.pid"
+  set :unicorn_pid_backup, "#{deploy_to}/tmp/unicorn_pid_backup"
+  set :start_unicorn, %{
+    cd #{app_path}
+    unicorn -D -c config/unicorn.rb -E production
+    cat "#{unicorn_pid}" > "#{unicorn_pid_backup}"
+  }
+ 
+#                                                                    Start task
+# ------------------------------------------------------------------------------
+  desc "Start unicorn"
+  task :start => :environment do
+    queue 'echo "-----> Start Unicorn"'
+    queue! start_unicorn
+  end
+ 
+#                                                                     Stop task
+# ------------------------------------------------------------------------------
+  desc "Stop unicorn"
+  task :stop do
+    queue 'echo "-----> Stop Unicorn"'
+    queue! %{
+      test -s "#{unicorn_pid_backup}" && kill -9 `cat "#{unicorn_pid_backup}"` && echo "Stop Ok" && exit 0
+      echo >&2 "Not running"
+    }
+  end
+ 
+#                                                                  Restart task
+# ------------------------------------------------------------------------------
+  desc "Restart unicorn using 'upgrade'"
+  task :restart => :environment do
+    invoke 'unicorn:stop'
+    invoke 'unicorn:start'
+  end
+end
