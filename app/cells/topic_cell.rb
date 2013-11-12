@@ -2,7 +2,6 @@ class TopicCell < Cell::Rails
   
   cache :site_infos, :expires_in => 1.hours
   cache :site_about, :expires_in => 30.days
-  cache :node_other_topics, :expires_in => 1.hours
 
   def site_infos
    @users_count = User.unscoped.count
