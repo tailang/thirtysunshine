@@ -113,9 +113,10 @@ namespace :unicorn do
 #                                                                  Restart task
 # ------------------------------------------------------------------------------
   # 出现问题：执行stop后自动断开与服务器的连接，从而不能执行start
-  #desc "Restart unicorn using 'upgrade'" 
-  #task :restart => :environment do
-    #invoke 'unicorn:stop'
-    #invoke 'unicorn:start'
-  #end
+  desc "Restart unicorn using 'upgrade'" 
+  task :restart => :environment do
+    queue! %{
+      kill -USR2 `cat "#{app_path}/tmp/pids/unicorn.pid"`
+    }
+  end
 end
