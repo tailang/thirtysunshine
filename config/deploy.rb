@@ -115,7 +115,9 @@ namespace :unicorn do
   desc "Restart unicorn using 'upgrade'" 
   task :restart => :environment do
     queue! %{
-      kill -USR2 `cat "#{app_path}/tmp/pids/unicorn.pid"`
+     kill -USR2 `cat "#{unicorn_pid_backup}"`
+     sleep 1
+     cat "#{unicorn_pid}" > "#{unicorn_pid_backup}"
     }
   end
 end
