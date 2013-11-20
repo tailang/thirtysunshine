@@ -112,7 +112,6 @@ namespace :unicorn do
  
 #                                                                  Restart task
 # ------------------------------------------------------------------------------
-  # 出现问题：执行stop后自动断开与服务器的连接，从而不能执行start
   desc "Restart unicorn using 'upgrade'" 
   task :restart => :environment do
     queue! %{
