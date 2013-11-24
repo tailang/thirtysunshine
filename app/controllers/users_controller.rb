@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   end
 
   def update
-  	#@user = User.find(params[:id])
+    #@user = User.find(params[:id])
   	if @user.update_attributes(params[:user])
   	  redirect_to @user
   	  flash[:success] = "设置成功"
