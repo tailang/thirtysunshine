@@ -8,9 +8,6 @@ class StaticpagesController < ApplicationController
   end
 
   def help
-  	
-  end
 
-  def search
   end
 end

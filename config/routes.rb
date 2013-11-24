@@ -25,7 +25,7 @@ Thirtysunshine::Application.routes.draw do
   #match "/index" => "staticpages#index"
   match "/advice" => "staticpages#advice"
   match "/help" => "staticpages#help"
-  #get "/search" => "staticpages#search"
+
   get "/search" => "search#index"
 
   root :to => "topics#index"
