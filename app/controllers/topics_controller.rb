@@ -12,6 +12,7 @@ class TopicsController < ApplicationController
   	#@topic = Topic.find(params[:id])
     @comments = @topic.comments.paginate(:page => params[:page], :per_page => 20)
     @node = @topic.node 
+    set_seo_meta("#{@topic.title}","#{@topic.body}")
   end
 
   def new

@@ -9,6 +9,7 @@ class NodesController < ApplicationController
   def show
     #@node = Node.find(params[:id])
     @topics = @node.topics.paginate(:page => params[:page], :per_page => 15)
+    set_seo_meta("#{@node.name}", "#{@node.introduction}")
   end
   
   def new

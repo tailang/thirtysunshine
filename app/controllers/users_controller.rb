@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   
   def show
   	#@user = User.find(params[:id])
+    set_seo_meta("#{@user.username}","#{@user.username}, #{@user.description}")
   end
 
   def edit

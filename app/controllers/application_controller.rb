@@ -26,4 +26,8 @@ class ApplicationController < ActionController::Base
     redirect_to root_path
   end
 
+  def set_seo_meta(meta_keywords='', meta_description='')
+    @meta_keywords = meta_keywords
+    @meta_description = meta_description
+  end
 end
