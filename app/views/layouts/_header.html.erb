@@ -16,6 +16,11 @@
             <li><%= link_to "30度历程", "/topics/7" %></li>
           </ul>
         </li>
+        <li>
+        <form action="/search" class="navbar-search pull-left" method="get">
+          <input type="text" name="q" value="<%= params[:q] %>" placeholder="搜索" />
+        </form>
+        </li>
       </ul>
 
       <ul class="nav pull-right">

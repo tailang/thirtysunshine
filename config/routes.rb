@@ -1,5 +1,7 @@
 Thirtysunshine::Application.routes.draw do
 
+  get "search/index"
+
   devise_for :users, :controllers => { :registrations => "registrations" }
   resources :users
   
@@ -21,11 +23,10 @@ Thirtysunshine::Application.routes.draw do
   match 'users/:id/follows' => 'users#follows', :as => :follows_user
 
   #match "/index" => "staticpages#index"
-  match "/about" => "staticpages#about"
   match "/advice" => "staticpages#advice"
   match "/help" => "staticpages#help"
-  match "/search" => "staticpages#search"
-  match "/thanks" => "staticpages#thanks"
+  #get "/search" => "staticpages#search"
+  get "/search" => "search#index"
 
   root :to => "topics#index"
 
