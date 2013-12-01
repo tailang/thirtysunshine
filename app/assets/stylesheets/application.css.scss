@@ -3,6 +3,10 @@
  *= require_tree .
  */
  
+$navbarBackgroundHighlight: #294F63;
+$navbarLinkColor: #ffffff;
+$navbarLinkColorHover: #ffffff;
+$dropdownColor: #294f63;
 @import "bootstrap";
 #gotop{
 	display: block;

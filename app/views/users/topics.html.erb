@@ -9,18 +9,9 @@
 </div>
 
   <div class="span3">
-    <div class="box">
-      <div class="tabbable tabs-right">
-        <ul class="nav nav-tabs">
-          <li><%= link_to "个人信息", user_path(@user) %></li>
-          <li class="active"><%= link_to "发布话题", topics_user_path(@user) %></li>
-          <li><%= link_to "回应话题", comments_user_path(@user) %></li>
-          <li><%= link_to "收藏话题", follows_user_path(@user) %></li>
-        </ul>
-      </div>
-    </div>
     <div>
       <%= render_cell :user, :douban, :user => @user%>
     </div>
+  </div>
   </div>
 

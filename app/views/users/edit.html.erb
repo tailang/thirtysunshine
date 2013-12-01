@@ -84,7 +84,7 @@
       </div>
     </div>
     <div class="control-group">
-      <div class="control-label"><%= f.label :douban, "豆瓣" %></div>
+      <div class="control-label" id="douban"><%= f.label :douban, "豆瓣" %></div>
       <div class="controls">
         <%= f.text_field :douban, :style => "width:290px" %>
       </div>
@@ -104,7 +104,7 @@
     <div class="control-group">
       <div class="control-label">
         <%= f.label :description, "简绍一下自己呗" %>
-        <div class="controls">
+        <div class="controls" id="introduction">
           <%= f.text_area :description, :style => "width:290px; height:200px"  %>
         </div>
       </div>

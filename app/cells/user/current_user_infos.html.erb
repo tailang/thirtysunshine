@@ -18,12 +18,13 @@
   <div class="state_box">
     <% unless @user.description.blank? %>
       <%= output_content @user.description %>
-      <%= link_to "(编辑)", edit_user_path(@user) %>
+      <%= link_to "(编辑)", "/users/#{@user.id}/edit#introduction" %>
     <% else %>
-      <%= link_to "(添加自我介绍)", edit_user_path(@user) %>
+      <%= link_to "(添加自我介绍)", "/users/#{@user.id}/edit#introduction" %>
     <% end %>
   </div>
-
-  <%= link_to "创建话题", new_topic_path, :class => "btn btn-success" %>
+  <% if @user.avatar.blank? %>
+    <span>无头像怎么勾搭妹子or帅哥，快去<%= link_to "换一个", edit_user_path(@user) %>吧</span>
+  <% end %>
 
 </div>

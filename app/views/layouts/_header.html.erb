@@ -1,4 +1,4 @@
-<div class="navbar navbar-fixed-top navbar-inverse">
+<div class="navbar navbar-fixed-top ">
   <div class="navbar-inner">
   	<div class="container">
       <!-- link_to image_tag("5.png", :id => "logo_img"), root_path -->
@@ -6,15 +6,6 @@
       <ul class="nav navbar-nav pull-left">
         <li><%= link_to "论坛", topics_path %></li>
         <li><%= link_to "成员", users_path %></li>
-        <li id="fat-menu" class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">关于<b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li><%= link_to "感谢", '/topics/6' %></li>
-            <li><%= link_to "帮助",  help_path, :target => "_blank" %></li>
-            <li><%= link_to "联系我", advice_path %></li>
-            <li><%= link_to "30度历程", "/topics/7" %></li>
-          </ul>
-        </li>
         <li>
         <form action="/search" class="navbar-search pull-left " method="get">
           <input type="text" name="q" id="search" value="<%= params[:q] %>" placeholder="搜索" />
@@ -26,21 +17,16 @@
        <% if user_signed_in? %>
        <li>
         <div class="head-action">
-          <%= link_to count_unread_notification, notifications_path, :class => "badge badge-important" %>
+          <%= link_to "消息 #{count_unread_notification}", notifications_path, :class => "label label-important" %>
         </div>
       </li>
-      <li id="fat-menu" class="dropdown">
-       <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.username %> <b class="caret"></b></a>
-       <ul class="dropdown-menu">
-        <li><%= link_to raw("<i class='icon-user'></i>我的主页"), current_user %></li>
-        <li><%= link_to raw("<i class='icon-cog'></i>帐号设置"), edit_user_path(current_user) %></li>
+      <li><%= link_to raw("<i class='icon-user icon-white'></i>#{current_user.username}"), current_user %></li>
+        <li><%= link_to raw("<i class='icon-cog icon-white'></i>设置"), edit_user_path(current_user) %></li>
         <li class="divrder"></li>
-        <li><%= link_to raw("<i class='icon-off'></i>登出"), destroy_user_session_path, :method => :delete %></li>
-      </ul>
-      </li>
+        <li><%= link_to raw("<i class='icon-random icon-white'></i>登出"), destroy_user_session_path, :method => :delete %></li>
       <% else %>
-      <li><%= link_to raw("<i class='icon-inbox icon-white'></i>登录"), new_user_session_path %></li>
-      <li><%= link_to raw("<i class='icon-plus icon-white'></i>注册"), new_user_registration_path %></li>
+      <li><%= link_to raw("<i class='icon-off icon-white'></i>登录"), new_user_session_path %></li>
+      <li><%= link_to raw("<i class=' icon-heart icon-white'></i>注册"), new_user_registration_path %></li>
       <% end %>
     </ul>
     </div>

@@ -82,29 +82,19 @@
     </ul>  
     </div> 
     <div class="box">
-      <div class="box_header"><span>最近发布的话题</span></div>
+      <div class="box_header"><span>最近发布的话题</span> <%= link_to "(更多话题...)", topics_user_path(@user) %> </div>
       <%= render_cell :user, :current_topics, :user => @user %>      
     </div>
     <div class="box">
-      <div class="box_header"><span>最近回应的话题</span></div>
+      <div class="box_header"><span>最近回应的话题</span> <%= link_to "(更多回应...)", comments_user_path(@user) %></div>
       <%= render_cell :user, :current_comments, :user => @user %>
     </div>
     <div class="box">
-      <div class="box_header"><span>最近收藏的话题</span></div>
+      <div class="box_header"><span>最近收藏的话题</span> <%= link_to "(更多收藏...)", follows_user_path(@user) %></div>
       <%= render_cell :user, :follow_topics, :user => @user %>
     </div>
   </div>
   <div class="span3">
-    <div class="box">
-      <div class="tabbable tabs-right">
-        <ul class="nav nav-tabs">
-          <li class="active"><%= link_to "个人信息", user_path(@user) %></li>
-          <li><%= link_to "发布话题", topics_user_path(@user) %></li>
-          <li><%= link_to "回应话题", comments_user_path(@user) %></li>
-          <li><%= link_to "收藏收藏", follows_user_path(@user) %></li>
-        </ul>
-      </div>
-    </div>
     <div>
       <%= render_cell :user, :douban, :user => @user%>
     </div>
