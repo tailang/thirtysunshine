@@ -5,6 +5,8 @@
   	  <% @nodes.each do |node| %>
        <%= link_to node.name, node_path(node) %>
 			 <%= output_content node.introduction %><br>
+       <%= link_to "Edit", edit_node_path(node) %>
+       <%= link_to "Delete", node_path(node), :method => :delete, :confirm => "删除后对应的Topic也会被删除" if can? :destroy, node  %>
       <% end -%>
   	</div>
   </div>

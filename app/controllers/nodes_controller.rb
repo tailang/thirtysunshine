@@ -42,9 +42,9 @@ class NodesController < ApplicationController
     end
   end
 
-  #def destroy
-    #@node.destroy
-    #redirect_to nodes_path
-  #end
+  def destroy
+    @node.destroy
+    redirect_to nodes_path
+  end
 
 end
