@@ -4,7 +4,9 @@
 	<i class="icon-file"></i>回应话题：<%= link_to comment.commentable.title, topic_path(comment.commentable) %>
 	<span class="pull-right">于<%= time_format comment.created_at %></span>
   </div>
+  <div class="content_doc">
   <%= kindeditor_output_content comment.comment %>
+  </div>
 </div>
 <% end -%>
 
