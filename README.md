@@ -10,7 +10,7 @@ Mysql
 ```
 git clone git@github.com:tailang/thirtysunshine.git
 
-cp config/database.yml.example config/database.yml
+cp config/database.yml.example config/database.yml  #并添加数据库密码
 
 bundle install
 
