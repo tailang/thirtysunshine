@@ -1,0 +1,1 @@
+Thirtysunshine::Application.config.secret_token ='bb8a8ec97768b666579d50c74336e0eafd97e90ad482d6823ed004ba2fdfac28509d34b8cdd9c69c39dbe5a99c3d840c3cd9d08159d00f2277bfe08fe4b4b50e'
