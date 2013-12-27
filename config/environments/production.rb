@@ -57,8 +57,8 @@ Thirtysunshine::Application.configure do
      :port => 25,
      :domain => "163.com",#如163.com
      :authentication => :login,
-     :user_name => "sunshine_30du@163.com", #你的邮箱
-     :password => "rubyonrails3.13" #你的密码
+     :user_name => "xxx@163.com", #你的邮箱
+     :password => "xxxxxx" #你的密码
    }
 
   # Enable threaded mode

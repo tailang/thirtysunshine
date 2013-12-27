@@ -1,3 +1,5 @@
+###如果你使用mina部署，请根据自己的环境进行修改
+
 require 'mina/bundler'
 require 'mina/rails'
 require 'mina/git'
