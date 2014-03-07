@@ -14,10 +14,11 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
+gem 'turbolinks'
 
 #前端
 gem 'bootstrap-sass', '~> 2.3.2'
+
 
 #分页
 gem 'will_paginate', '~> 3.0.4'
@@ -51,6 +52,7 @@ gem 'cells', '~> 3.9.0'
 
 #更好的错误提示
 group :development do
+  gem "rails_best_practices"
   gem "better_errors"
   gem "binding_of_caller"
 end
