@@ -50,6 +50,16 @@ gem 'rails_kindeditor', '~> 0.4.0'
 
 gem 'cells', '~> 3.9.0'
 
+#redis
+#gem 'redis', '~> 3.0.6'
+#gem 'redis-store', :git=>'git://github.com/jodosha/redis-store.git'
+#gem 'redis-namespace','~> 1.2.2'
+gem 'redis-objects', '~> 0.5.3'
+
+gem 'sidekiq', '~> 2.14.0'
+gem 'sinatra', '>= 1.3.0', :require => nil
+gem 'redmon', require: false
+
 #更好的错误提示
 group :development do
   gem "rails_best_practices"

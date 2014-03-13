@@ -30,4 +30,9 @@ Thirtysunshine::Application.routes.draw do
 
   root :to => "topics#index"
 
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
+
+  mount Redmon::App => '/redmon'
+
  end

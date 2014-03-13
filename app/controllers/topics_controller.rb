@@ -6,6 +6,7 @@ class TopicsController < ApplicationController
   	#@topics = Topic.paginate(:page => params[:page], :per_page => 15)
     @topics = @topics.paginate(:page => params[:page], :per_page => 15)
     @nodes = Node.all
+    #SidekiqTestWorker.perform_async("topiccontroller", "index")
   end
 
   def show
