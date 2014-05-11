@@ -21,6 +21,10 @@
 #config/initializers/devise.rb
 /public/uploads/*
 /.ruby-version
+/.idea
+/.tags
+/.tags_sorted_by_file
+/.rvmrc
 
 
 *.swp

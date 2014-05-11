@@ -3,14 +3,14 @@ class TopicsController < ApplicationController
   before_filter :authenticate_user!, :except => [:index, :show]
   load_and_authorize_resource
   def index
-  	#@topics = Topic.paginate(:page => params[:page], :per_page => 15)
+    #@topics = Topic.paginate(:page => params[:page], :per_page => 15)
     @topics = @topics.paginate(:page => params[:page], :per_page => 15)
     @nodes = Node.all
     #SidekiqTestWorker.perform_async("topiccontroller", "index")
   end
 
   def show
-  	#@topic = Topic.find(params[:id])
+    #@topic = Topic.find(params[:id])
     @comments = @topic.comments.paginate(:page => params[:page], :per_page => 20)
     @node = @topic.node 
     set_seo_meta("#{@topic.title}","#{@topic.body}")

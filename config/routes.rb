@@ -1,4 +1,6 @@
 Thirtysunshine::Application.routes.draw do
+  require 'api'
+  mount Thirtysunshine::API => '/'
 
   get "search/index"
 
