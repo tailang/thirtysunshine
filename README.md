@@ -6,7 +6,7 @@ Mysql
 
 这是我开始学习Rails的时候，边学边写的一个关于骑行旅行的论坛社区---30度阳光 ，现在已经关闭，遂把代码开源出来。  
 
-#####usage
+### Usage
 ```
 git clone git@github.com:tailang/thirtysunshine.git
 
